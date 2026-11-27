@@ -13,7 +13,8 @@
     "test:coverage": "node --disable-warning=ExperimentalWarning --experimental-strip-types --experimental-test-coverage --test tests/*.test.ts",
     "test:e2e": "playwright test",
     "predev": "node scripts/prepare-editor.mjs",
-    "prebuild": "node scripts/prepare-editor.mjs"
+    "prebuild": "node scripts/prepare-editor.mjs",
+    "test:reference": "node --disable-warning=ExperimentalWarning --experimental-strip-types --test tests/reference/*.test.ts"
   },
   "engines": {
     "node": ">=22.18"
