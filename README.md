@@ -15,14 +15,16 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). Guest onboarding, three interactive lessons, the full curriculum roadmap, two visual traces, and three original coding problems work without an account or service credentials. This browser stores your progress, editor drafts, and notes.
+Open [localhost:3000](http://localhost:3000). Guest onboarding, four interactive lessons, the full curriculum roadmap, three visual traces, and four original coding problems work without an account or service credentials. This browser stores your progress, editor drafts, and notes.
 
 ## Learn by doing
 
 - **Start** chooses a language, experience level, goal, and daily time budget.
 - **Roadmap** recommends the next published lesson and marks completed lessons.
-- **Visual Lab** walks through first-occurrence binary search and bubble sort. Edit the array, change speed, step in either direction, and inspect variables and pseudocode.
+- **Visual Lab** walks through first-occurrence binary search, bubble sort, and running totals. Edit the array, step through pseudocode, and compare binary and linear search on the same input.
 - **Practice** includes a locally served Monaco editor, a plain-text editor, a resizable workspace, individual drafts, notes, and progressive hints.
+- **Revision** schedules reviews from prediction results. The mistake notebook records missed predictions and failed submissions and lets learners add their own explanation.
+- **External practice** links to five official platforms with manual completion, and reads recent Codeforces ratings from the public API.
 
 ## Connect an isolated judge
 
