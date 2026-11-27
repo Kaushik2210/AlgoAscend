@@ -14,7 +14,10 @@
     "test:e2e": "playwright test",
     "predev": "node scripts/prepare-editor.mjs",
     "prebuild": "node scripts/prepare-editor.mjs",
-    "test:reference": "node --disable-warning=ExperimentalWarning --experimental-strip-types --test tests/reference/*.test.ts"
+    "test:reference": "node --disable-warning=ExperimentalWarning --experimental-strip-types --test tests/reference/*.test.ts",
+    "runner:build": "node runner/build.mjs",
+    "runner:serve": "node --env-file-if-exists=.env.local runner/server.mjs",
+    "runner:configure": "node runner/configure.mjs"
   },
   "engines": {
     "node": ">=22.18"
