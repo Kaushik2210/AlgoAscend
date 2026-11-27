@@ -98,7 +98,7 @@ test("onboarding, lab, lessons and workspace have accessible names in both theme
 test("the judge API reports an unavailable service without a fabricated result",async ({request}) => {
   const response = await request.post("/api/judge",{data:{problemId:"signal-sum",language:"c",source:"int main(void) {return 0;}",mode:"submit",stdin:""}});
   expect(response.status()).toBe(503);
-  expect(await response.json()).toEqual({error:"Code execution requires a configured Judge0 service."});
+  expect(await response.json()).toEqual({error:"Code execution requires a configured sandbox or Judge0 service."});
 });
 
 test("learners can compare complexity and use authored hints without a provider",async ({page,request}) => {

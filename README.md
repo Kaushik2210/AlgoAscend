@@ -27,7 +27,11 @@ Open [localhost:3000](http://localhost:3000). Guest onboarding, four interactive
 - **Revision** schedules reviews from prediction results. The mistake notebook records missed predictions and failed submissions and lets learners add their own explanation.
 - **External practice** links to five official platforms with manual completion, and reads recent Codeforces ratings from the public API.
 
-## Connect an isolated judge
+## Run code locally
+
+Use Docker to run and submit C, Python, and Java from the workspace. Start with the [local runner setup](docs/LOCAL_RUNNER.md).
+
+## Connect an isolated Judge0 instance
 
 Copy `.env.example` to `.env.local`. Set `JUDGE0_URL` to a privately managed Judge0 CE endpoint, optionally set its authentication token, and verify the configured language IDs with that installation. The adapter uses synchronous submissions and requires the instance to support `wait=true`. Restart the application after changing configuration.
 
