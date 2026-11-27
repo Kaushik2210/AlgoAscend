@@ -6,6 +6,8 @@ AlgoAscend is an interactive programming field guide for learners working in C, 
 
 ![AlgoAscend interactive binary search preview](docs/screenshots/home-1440.png)
 
+[Open AlgoAscend online](https://algoascend.vercel.app) · [Deployment and verification](docs/DEPLOYMENT.md)
+
 ## Run locally
 
 Requires Node.js 22.18 or newer and npm.

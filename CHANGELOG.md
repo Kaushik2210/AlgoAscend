@@ -9,3 +9,4 @@
 - Added a revision queue, editable mistake notebook, curated external practice and Codeforces rating lookup.
 - Added Pattern Detective cases and complete editorials for the original challenges.
 - Added live C, Python, and Java execution using disposable local Docker sandboxes.
+- Deployed the app online with isolated hosted execution for C, Python, and Java.
