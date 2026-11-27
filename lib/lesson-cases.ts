@@ -583,5 +583,131 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3 0\n",
       "expected": "0 1 2\n"
     }
+  ],
+  "binary-search-trees-practice": [
+    {
+      "stdin": "0 2\n-1 0\n",
+      "expected": "NO\nNO\n"
+    },
+    {
+      "stdin": "4 3\n3 3 3 2\n3 2 4\n",
+      "expected": "YES\nYES\nNO\n"
+    },
+    {
+      "stdin": "4 3\n-4 -3 -2 -1\n-1 -5 -4\n",
+      "expected": "YES\nNO\nYES\n"
+    }
+  ],
+  "grid-path-dp-practice": [
+    {
+      "stdin": "1 1\n.\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "1 1\n#\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "2 2\n.#\n#.\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 3\n...\n...\n...\n",
+      "expected": "6\n"
+    }
+  ],
+  "zero-one-knapsack-practice": [
+    {
+      "stdin": "1 4\n2 3\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "2 0\n1 3\n2 4\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 5\n4 7\n3 6\n2 5\n",
+      "expected": "11\n"
+    },
+    {
+      "stdin": "0 20\n",
+      "expected": "0\n"
+    }
+  ],
+  "edit-distance-practice": [
+    {
+      "stdin": "\nabc\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "abc\n\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "\n\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "ab\nba\n",
+      "expected": "2\n"
+    },
+    {
+      "stdin": "kitten\nsitting\n",
+      "expected": "3\n"
+    }
+  ],
+  "z-algorithm-practice": [
+    {
+      "stdin": "a\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "aaaaa\n",
+      "expected": "0 4 3 2 1\n"
+    },
+    {
+      "stdin": "abcde\n",
+      "expected": "0 0 0 0 0\n"
+    },
+    {
+      "stdin": "aabxaabxcaabxaabxay\n",
+      "expected": "0 1 0 0 4 1 0 0 0 8 1 0 0 5 1 0 0 1 0\n"
+    }
+  ],
+  "fractional-knapsack-practice": [
+    {
+      "stdin": "2 5\n5 10\n2 9\n",
+      "expected": "15\n"
+    },
+    {
+      "stdin": "1 1\n3 5\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "2 0\n2 9\n1 5\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "2 500000\n1000000 999999\n1000000 1000000\n",
+      "expected": "500000\n"
+    }
+  ],
+  "bipartite-graphs-practice": [
+    {
+      "stdin": "4 4\n0 1\n1 2\n2 3\n3 0\n",
+      "expected": "YES\n"
+    },
+    {
+      "stdin": "4 3\n1 2\n2 3\n1 3\n",
+      "expected": "NO\n"
+    },
+    {
+      "stdin": "2 1\n1 1\n",
+      "expected": "NO\n"
+    },
+    {
+      "stdin": "3 0\n",
+      "expected": "YES\n"
+    }
   ]
 };
