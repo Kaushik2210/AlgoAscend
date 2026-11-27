@@ -2,6 +2,7 @@
 
 import { useSyncExternalStore } from "react";
 import type { Experience, Goal, Language } from "./curriculum";
+import type { Mistake, Review } from "./revision";
 
 export type Guest = {
   language: Language;
@@ -10,10 +11,13 @@ export type Guest = {
   minutes: number;
   completed: string[];
   solved: string[];
+  reviews: Record<string,Review>;
+  mistakes: Record<string,Mistake>;
+  externalCompleted: string[];
 };
 
 const key = "algoascend-guest-v1";
-const defaults: Guest = { language: "python", goal: "fundamentals", experience: "new", minutes: 15, completed: [], solved: [] };
+const defaults: Guest = { language: "python", goal: "fundamentals", experience: "new", minutes: 15, completed: [], solved: [], reviews: {}, mistakes: {}, externalCompleted: [] };
 let memory: string | null = null;
 
 function read(): string | null {

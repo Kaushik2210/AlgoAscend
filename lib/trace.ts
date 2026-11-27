@@ -1,4 +1,4 @@
-export type Algorithm = "binary" | "bubble";
+export type Algorithm = "binary" | "bubble" | "accumulate";
 
 export interface Frame {
   values: readonly number[];
@@ -9,6 +9,7 @@ export interface Frame {
   line: number;
   message: string;
   result?: number;
+  total?: number;
 }
 
 export const traces = {
@@ -24,6 +25,12 @@ export const traces = {
     complexity: "O(n²)",
     values: [72, 20, 58, 33, 88, 45, 67],
     pseudocode: ["for each shrinking pass", "compare adjacent items", "if left > right: swap", "if no swaps: stop", "return the sorted array"],
+  },
+  accumulate: {
+    title: "Running Total",
+    complexity: "O(n)",
+    values: [4, -8, 3, 1, 6, -2],
+    pseudocode: ["total = 0", "for each value from left to right", "total = total + value", "finish with the final total"],
   },
 };
 
@@ -107,4 +114,22 @@ export function linearFind(values: readonly number[], target: number) {
     if (value === target) return {index, comparisons:index + 1};
   }
   return {index:-1, comparisons:values.length};
+}
+
+export function accumulationTrace(values: readonly number[]): Frame[] {
+  const frames: Frame[] = [];
+  let total = 0;
+  let operations = 0;
+  const add = (line: number, low: number, message: string, active: number[] = []) => {
+    frames.push({values:[...values],line,low,high:values.length-1,active,operations,total,message});
+  };
+  add(0,0,"Start with a total of 0.");
+  for (const [index,value] of values.entries()) {
+    add(1,index,`Read a[${index}] = ${value}. The previous total is ${total}.`,[index]);
+    total += value;
+    operations++;
+    add(2,index+1,`Add ${value} to get a running total of ${total}.`,[index]);
+  }
+  add(3,values.length,`Every value has been counted. The final total is ${total}.`);
+  return frames;
 }

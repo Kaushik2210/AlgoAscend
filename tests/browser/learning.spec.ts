@@ -56,7 +56,7 @@ test("lab rejects unsorted input and steps through a valid search",async ({page}
     await page.setViewportSize({width:1440,height:1160});
     await mkdir("docs/screenshots",{recursive:true});
     await page.evaluate(() => window.scrollTo(0,0));
-    await page.screenshot({path:"docs/screenshots/visual-lab.png",animations:"disabled"});
+    await page.screenshot({path:"docs/screenshots/visual-lab.png",animations:"disabled",fullPage:true});
   }
 });
 
@@ -85,10 +85,10 @@ for (const width of [375,768,1440]) {
 test("onboarding, lab, lessons and workspace have accessible names in both themes",async ({page}) => {
   for (const theme of ["light","dark"] as const) {
     await page.emulateMedia({colorScheme:theme,reducedMotion:"reduce"});
-    for (const url of ["/start","/learn","/lab","/learn/binary-search","/practice","/practice/first-signal"]) {
+    for (const url of ["/start","/learn","/lab","/learn/binary-search","/practice","/practice/first-signal","/practice/external","/review"]) {
       await page.goto(url);
       if (url === "/practice") await page.getByText("Estimate what fits the constraints").click();
-      if (url.startsWith("/practice/")) await page.getByRole("button",{name:"Use plain text editor"}).click();
+      if (url === "/practice/first-signal") await page.getByRole("button",{name:"Use plain text editor"}).click();
       const audit = await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze();
       expect(audit.violations,`${theme} ${url}`).toEqual([]);
     }
@@ -111,4 +111,56 @@ test("learners can compare complexity and use authored hints without a provider"
   const result = await request.post("/api/mentor",{data:{problemId:"first-signal",language:"python",mode:"hint",question:"What does the midpoint tell me?"}});
   expect(result.status()).toBe(503);
   expect(await result.json()).toEqual({error:"AlgoMentor is unavailable. Use the authored hints in the workspace."});
+});
+
+test("missed predictions schedule revision and keep editable notes after reload",async ({page}) => {
+  await page.goto("/learn/input-output");
+  await page.getByRole("radio",{name:"−11",exact:true}).check();
+  await page.getByRole("button",{name:"Check prediction"}).click();
+  await page.getByRole("link",{name:"Revision and mistakes"}).click();
+  await expect(page.getByText("Due now")).toBeVisible();
+  await page.getByLabel("Category").selectOption("Input or output");
+  await page.getByLabel("Your note").fill("Add the signed integers.");
+  await page.getByRole("button",{name:"Save note"}).click();
+  await expect(page.getByText("Saved",{exact:true})).toBeVisible();
+  await page.reload();
+  await expect(page.getByLabel("Your note")).toHaveValue("Add the signed integers.");
+  await page.getByRole("link",{name:"Review",exact:true}).click();
+  await page.getByRole("radio",{name:"3",exact:true}).check();
+  await page.getByRole("button",{name:"Check prediction"}).click();
+  await page.getByRole("link",{name:"Revision and mistakes"}).click();
+  await expect(page.getByText(/Next review/)).toBeVisible();
+});
+
+test("external practice preserves manual completion and presents Codeforces history",async ({page,request}) => {
+  await page.route("**/api/codeforces/rating?handle=learner",route => route.fulfill({json:{handle:"learner",history:[{
+    contestId:123,contestName:"Practice Round",rank:42,updatedAt:1_780_000_000_000,rating:1342,delta:24,
+  }]}}));
+  await page.goto("/practice");
+  await page.getByRole("link",{name:"Explore external practice"}).click();
+  await expect(page.getByRole("link",{name:"Open on LeetCode"})).toHaveAttribute("href","https://leetcode.com/problems/binary-search/");
+  const completion = page.getByRole("button",{name:"Mark Binary Search complete",exact:true});
+  await completion.click();
+  await expect(completion).toHaveAttribute("aria-pressed","true");
+  await page.reload();
+  await expect(completion).toHaveAttribute("aria-pressed","true");
+  await page.getByRole("textbox",{name:"Codeforces handle"}).fill("learner");
+  await page.getByRole("button",{name:"Look up handle"}).click();
+  await expect(page.getByText("learner · Latest rating 1342")).toBeVisible();
+  await expect(page.getByRole("link",{name:"Practice Round"})).toHaveAttribute("href","https://codeforces.com/contest/123");
+  const invalid = await request.get("/api/codeforces/rating?handle=not%3Bvalid");
+  expect(invalid.status()).toBe(400);
+});
+
+test("running totals trace signed input and lead to a practice problem",async ({page}) => {
+  await page.goto("/learn/running-total");
+  await page.getByLabel("Array values").fill("4, -8, 3, 1");
+  await page.getByRole("button",{name:"Apply input"}).click();
+  await page.getByRole("button",{name:"Next step"}).click();
+  await page.getByRole("button",{name:"Next step"}).click();
+  await expect(page.getByText("Add 4 to get a running total of 4.")).toBeVisible();
+  await page.getByLabel("Timeline").fill("9");
+  await expect(page.getByText("Every value has been counted. The final total is 0.")).toBeVisible();
+  await page.getByRole("link",{name:"Practice this concept"}).click();
+  await expect(page.getByRole("heading",{name:"Rolling Sensor Total"})).toBeVisible();
 });

@@ -28,7 +28,7 @@ type Lesson = {
   answers: string[];
   correct: number;
   feedback: string;
-  algorithm?: "binary" | "bubble";
+  algorithm?: "binary" | "bubble" | "accumulate";
   problem: string;
   pseudocode: string;
   code: Record<Language, string>;
@@ -52,6 +52,12 @@ const sortCode = {
   java: "static void bubbleSort(int[] a) {\n    for (int end = a.length - 1; end > 0; end--) {\n        boolean swapped = false;\n        for (int i = 0; i < end; i++) {\n            if (a[i] > a[i + 1]) {\n                int temp = a[i];\n                a[i] = a[i + 1];\n                a[i + 1] = temp;\n                swapped = true;\n            }\n        }\n        if (!swapped) break;\n    }\n}",
 };
 
+const accumulationCode = {
+  c: "#include <stdio.h>\n\nint main(void) {\n    int n, total = 0;\n    if (scanf(\"%d\", &n) != 1) return 1;\n    for (int i = 0; i < n; ++i) {\n        int value;\n        if (scanf(\"%d\", &value) != 1) return 1;\n        total += value;\n        printf(\"%s%d\", i == 0 ? \"\" : \" \", total);\n    }\n    puts(\"\");\n    return 0;\n}",
+  python: "n = int(input())\nvalues = map(int, input().split())\ntotal = 0\nfor i, value in enumerate(values):\n    total += value\n    print(total, end=\"\\n\" if i == n - 1 else \" \")",
+  java: "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), total = 0;\n        for (int i = 0; i < n; i++) {\n            total += in.nextInt();\n            System.out.print((i == 0 ? \"\" : \" \") + total);\n        }\n        System.out.println();\n    }\n}",
+};
+
 export const lessons: Lesson[] = [
   {
     id: "input-output", title: "Input, process, output", stage: 0, minutes: 8,
@@ -70,6 +76,24 @@ export const lessons: Lesson[] = [
     question: "What should the program print for input −4 and 7?", answers: ["−11", "3", "−47"], correct: 1,
     feedback: "The program adds the parsed integers. Starting at −4 and moving seven units right lands on 3.",
     problem: "signal-sum", pseudocode: "read a, b\nanswer ← a + b\nprint answer", code: ioCode,
+  },
+  {
+    id: "running-total", title: "Loops and running totals", stage: 1, minutes: 10,
+    objective: "Update a variable once per input and explain what it represents after each iteration.",
+    prerequisites: "Reading and adding integers. Start with Input, process, output if those steps are new.",
+    analogy: "A bank balance changes after each deposit or withdrawal. The next balance uses the previous balance and the current transaction.",
+    explanation: "A loop applies the same operation to each item. An accumulator carries information from one iteration to the next. Start at zero for a sum, then add each item exactly once.",
+    formal: "After processing i items, total equals the sum of items at indexes 0 through i − 1. The next iteration adds the item at index i and preserves this relationship.",
+    runtime: "O(n) additions", memory: "O(1) for the accumulator. The Python example allocates O(n) space for split input.",
+    walkthrough: "Read the number of items. Initialize total once outside the loop. Read one value in each iteration, add it to total, then print the updated total. For [4, −8, 3, 1], the outputs are 4, −4, −1, 0.",
+    mistakes: "Declaring total inside the loop resets it every iteration. Printing before the addition shifts every reported balance one step behind.",
+    edge: "Try a single value, repeated zeros, and negative values. Check that the sum fits your integer type.",
+    debug: "A program prints [4, −8, 3] for input [4, −8, 3]. Where is the accumulator likely being reset?",
+    fill: "Complete the update: total = total + ____.",
+    revision: "Initialize once. Add the current item. Inspect or emit the new value before advancing.",
+    question: "For [5, −2, 4], what is the running total immediately after the second item?", answers: ["−2", "3", "7"], correct: 1,
+    feedback: "The current total after the first value is 5. Adding the second value, −2, gives 3.",
+    algorithm: "accumulate", problem: "rolling-total", pseudocode: "total ← 0\nfor each value in input order:\n  total ← total + value\n  print total", code: accumulationCode,
   },
   {
     id: "binary-search", title: "Binary search", stage: 4, minutes: 14,
@@ -113,8 +137,11 @@ export const lessons: Lesson[] = [
 export const stages = ["Computational thinking", "Programming fundamentals", "Algorithmic foundations", "Essential data structures", "Algorithmic patterns", "Trees and hierarchies", "Graphs", "Recursion and backtracking", "Greedy algorithms", "Dynamic programming", "Competitive programming mathematics", "Advanced data structures", "String algorithms", "Advanced competitive programming", "Interview and placement preparation"];
 
 export function recommendNext(experience: Experience, goal: Goal, completed: string[]): Lesson | undefined {
-  const sequence = experience === "new" ? lessons
-    : goal === "contests" || goal === "advanced" ? [lessons[2], lessons[1], lessons[0]]
-    : [lessons[1], lessons[2], lessons[0]];
-  return sequence.find(lesson => !completed.includes(lesson.id));
+  const upcoming = lessons.filter(lesson => !completed.includes(lesson.id));
+  if (experience === "new") return upcoming[0];
+  const search = upcoming.find(lesson => lesson.id === "binary-search");
+  const sort = upcoming.find(lesson => lesson.id === "bubble-sort");
+  return goal === "contests" || goal === "advanced"
+    ? sort ?? search ?? upcoming[0]
+    : search ?? sort ?? upcoming[0];
 }

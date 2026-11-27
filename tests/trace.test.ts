@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { binaryTrace, bubbleTrace, linearFind, parseValues } from "../lib/trace.ts";
+import { accumulationTrace, binaryTrace, bubbleTrace, linearFind, parseValues } from "../lib/trace.ts";
 
 test("binary search narrows the interval and returns the first matching index", () => {
   const frames = binaryTrace([2, 4, 4, 4, 9, 17], 4);
@@ -33,4 +33,12 @@ test("the linear comparison uses the same array and counts inspected values", ()
   assert.deepEqual(linearFind([2, 7, 7, 9], 7), {index:1, comparisons:2});
   assert.deepEqual(linearFind([2, 7, 7, 9], 4), {index:-1, comparisons:4});
   assert.deepEqual(linearFind([], 4), {index:-1, comparisons:0});
+});
+
+test("the accumulator exposes every running total, including zero and negative values", () => {
+  const frames = accumulationTrace([4,-8,3,1]);
+  assert.deepEqual(frames.filter(frame => frame.line === 2).map(frame => frame.total),[4,-4,-1,0]);
+  assert.equal(frames.at(-1)?.total,0);
+  assert.equal(frames.at(-1)?.operations,4);
+  assert.equal(accumulationTrace([]).at(-1)?.total,0);
 });

@@ -15,6 +15,7 @@ const verdicts: Record<number, string> = {
 
 const hidden: Record<string, {stdin: string; expected: string}[]> = {
   "signal-sum":[{stdin:"-10000 10000\n",expected:"0\n"},{stdin:"-10000 -10000\n",expected:"-20000\n"}],
+  "rolling-total":[{stdin:"1\n-9\n",expected:"-9\n"},{stdin:"5\n-2 2 0 -5 -5\n",expected:"-2 0 0 -5 -10\n"}],
   "first-signal":[{stdin:"0 9\n\n",expected:"-1\n"},{stdin:"5 -2\n-2 -2 -2 -1 4\n",expected:"0\n"},{stdin:"4 3\n-1 0 2 5\n",expected:"-1\n"}],
   "repair-order":[{stdin:"1\n-9\n",expected:"-9\n"},{stdin:"6\n5 4 3 2 1 0\n",expected:"0 1 2 3 4 5\n"},{stdin:"4\n-4 -4 0 6\n",expected:"-4 -4 0 6\n"}],
 };

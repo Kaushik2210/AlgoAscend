@@ -1,0 +1,7 @@
+export const externalPractice = [
+  {id:"leetcode-binary-search",platform:"LeetCode",title:"Binary Search",topic:"Binary search",href:"https://leetcode.com/problems/binary-search/",lesson:"binary-search",prompt:"Transfer your search to a version with unique values. What extra work does the first-occurrence version do?"},
+  {id:"codeforces-edu-search",platform:"Codeforces",title:"EDU Binary Search",topic:"Contest practice",href:"https://codeforces.com/blog/entry/81729?locale=en",lesson:"binary-search",prompt:"Find the EDU lesson and compare its boundary convention with the one you used in the lab."},
+  {id:"hackerrank-solve-first",platform:"HackerRank",title:"Solve Me First",topic:"Input and output",href:"https://www.hackerrank.com/challenges/solve-me-first/problem",lesson:"input-output",prompt:"Try the same reasoning in a function-based problem. Notice which code the platform provides."},
+  {id:"codechef-arrays",platform:"CodeChef",title:"Practice Arrays",topic:"Arrays",href:"https://www.codechef.com/practice/arrays",lesson:"bubble-sort",prompt:"Before writing a loop, describe which elements are already in their final positions."},
+  {id:"atcoder-practice",platform:"AtCoder",title:"Practice Contest",topic:"First contest",href:"https://atcoder.jp/contests/practice",lesson:"input-output",prompt:"Walk through the sample submission and compare the judge verdicts with the workspace."},
+];

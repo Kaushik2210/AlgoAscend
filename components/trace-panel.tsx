@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Braces, ChevronDown, CircleDot, Pause, Play, RotateCcw } from "lucide-react";
-import { binaryTrace, bubbleTrace, parseValues, traces } from "@/lib/trace";
+import { accumulationTrace, binaryTrace, bubbleTrace, parseValues, traces } from "@/lib/trace";
 import { SearchBattle } from "./search-battle";
 import type { Algorithm, Frame } from "@/lib/trace";
 
 function makeFrames(algorithm: Algorithm): Frame[] {
-  return algorithm === "binary" ? binaryTrace(traces.binary.values, traces.binary.target) : bubbleTrace(traces.bubble.values);
+  if (algorithm === "binary") return binaryTrace(traces.binary.values,traces.binary.target);
+  if (algorithm === "accumulate") return accumulationTrace(traces.accumulate.values);
+  return bubbleTrace(traces.bubble.values);
 }
 
 export function TracePanel({ preview = false, initial = "binary", battle = false }: { preview?: boolean; initial?: Algorithm; battle?: boolean }) {
@@ -26,7 +28,8 @@ export function TracePanel({ preview = false, initial = "binary", battle = false
   const max = Math.max(1, ...frame.values.map(Math.abs));
   const middle = frame.active[0];
   const final = frames[frames.length - 1];
-  const contrastingWindow = algorithm === "binary" ? "Search window" : "Unsorted window";
+  const contrastingWindow = algorithm === "binary" ? "Search window" : algorithm === "bubble" ? "Unsorted window" : "Unread values";
+  const activeLabel = algorithm === "binary" ? "Midpoint" : algorithm === "bubble" ? "Compared pair" : "Current item";
 
   useEffect(() => {
     if (!playing || last) return;
@@ -54,7 +57,7 @@ export function TracePanel({ preview = false, initial = "binary", battle = false
       const values = parseValues(input);
       const nextTarget = Number(target);
       if (algorithm === "binary" && !/^-?\d{1,3}$/.test(target.trim())) throw new Error("Enter an integer target between −999 and 999.");
-      setFrames(algorithm === "binary" ? binaryTrace(values, nextTarget) : bubbleTrace(values));
+      setFrames(algorithm === "binary" ? binaryTrace(values,nextTarget) : algorithm === "bubble" ? bubbleTrace(values) : accumulationTrace(values));
       setAppliedTarget(nextTarget);
       setIndex(0);
       setPlaying(false);
@@ -75,22 +78,22 @@ export function TracePanel({ preview = false, initial = "binary", battle = false
           <div className="trace-heading"><div><strong>{title}</strong><span className="trace-subtitle">Find a target in a sorted array</span></div><span className="complexity">{traces[algorithm].complexity}</span></div>
         ) : (
           <div className="trace-heading">
-            <label className="select-wrap"><span className="sr-only">Algorithm</span><select value={algorithm} onChange={event => selectAlgorithm(event.target.value as Algorithm)}><option value="binary">Binary Search</option><option value="bubble">Bubble Sort</option></select><ChevronDown size={15} aria-hidden="true"/></label>
+            <label className="select-wrap"><span className="sr-only">Algorithm</span><select value={algorithm} onChange={event => selectAlgorithm(event.target.value as Algorithm)}><option value="binary">Binary Search</option><option value="bubble">Bubble Sort</option><option value="accumulate">Running Total</option></select><ChevronDown size={15} aria-hidden="true"/></label>
             <span className="complexity">{traces[algorithm].complexity}</span>
           </div>
         )}
         <div className="plot" role="img" aria-label={`${title} array. ${frame.values.join(", ")}. ${frame.message}`}>
-          <div className="plot-key"><span><i/> {contrastingWindow}</span><span><i/> {algorithm === "binary" ? "Midpoint" : "Compared pair"}</span></div>
-          <div className="bars" aria-hidden="true">
+          <div className="plot-key"><span><i/> {contrastingWindow}</span><span><i/> {activeLabel}</span></div>
+          <div className={`bars ${algorithm === "accumulate" ? "array-tiles" : ""}`} aria-hidden="true">
             {frame.values.map((value, position) => {
               const active = frame.active.includes(position);
               const outside = position < frame.low || position > frame.high;
               return <div className={`bar-column ${active ? "active" : ""} ${outside && !active ? "outside" : ""}`} key={position}>
-                <span className="bar-value">{value}</span><span className="bar" style={{ height: `${Math.round(13 + 82 * Math.abs(value) / max)}%` }}/><span className="bar-index">{position}</span>
+                <span className="bar-value">{value}</span>{algorithm !== "accumulate" && <span className="bar" style={{ height: `${Math.round(13 + 82 * Math.abs(value) / max)}%` }}/>}<span className="bar-index">{position}</span>
               </div>;
             })}
           </div>
-          <div className="plot-bottom"><span>INDEX</span>{algorithm === "binary" && <span>TARGET <b>{appliedTarget}</b></span>}</div>
+          <div className="plot-bottom"><span>INDEX</span>{algorithm === "binary" && <span>TARGET <b>{appliedTarget}</b></span>}{algorithm === "accumulate" && <span>RUNNING TOTAL <b>{frame.total}</b></span>}</div>
         </div>
         <div className="trace-message" aria-live={playing ? "off" : "polite"}><span className="message-pointer">↳</span><span>{frame.message}</span></div>
         <div className="trace-controls">
@@ -112,7 +115,7 @@ export function TracePanel({ preview = false, initial = "binary", battle = false
           {error && <p id="trace-error" role="alert" className="error">{error}</p>}
           <div className="trace-details">
             <div><strong>Pseudocode</strong><ol className="pseudocode">{traces[algorithm].pseudocode.map((line, position) => <li key={line} aria-current={position === frame.line ? "step" : undefined}><code>{line}</code></li>)}</ol></div>
-            <div><strong>Variables</strong><dl className="variables"><dt>low</dt><dd>{frame.low}</dd><dt>high</dt><dd>{frame.high}</dd><dt>{algorithm === "binary" ? "mid" : "left"}</dt><dd>{middle ?? "—"}</dd><dt>comparisons</dt><dd>{frame.operations}</dd></dl>
+            <div><strong>Variables</strong><dl className="variables"><dt>low</dt><dd>{frame.low}</dd><dt>high</dt><dd>{frame.high}</dd><dt>{algorithm === "binary" ? "mid" : algorithm === "bubble" ? "left" : "index"}</dt><dd>{middle ?? "—"}</dd><dt>{algorithm === "accumulate" ? "additions" : "comparisons"}</dt><dd>{frame.operations}</dd></dl>
             <label>Speed<select value={speed} onChange={event => setSpeed(Number(event.target.value))}><option value={0.5}>0.5×</option><option value={1}>1×</option><option value={2}>2×</option></select></label></div>
           </div>
           {battle && algorithm === "binary" && <SearchBattle values={final.values} target={appliedTarget} binaryCount={final.operations} match={final.result ?? -1}/> }

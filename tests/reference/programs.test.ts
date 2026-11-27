@@ -39,7 +39,7 @@ for (const language of ["c","python","java"] as const) {
       for (const lesson of lessons) {
         const wrapper = suffix[lesson.id as keyof typeof suffix];
         const file = language === "python" ? "main.py" : language === "java" ? "Main.java" : "main.c";
-        const sample = wrapper ? undefined : "-3 5\n";
+        const sample = wrapper ? undefined : lesson.id === "running-total" ? "4\n4 -8 3 1\n" : "-3 5\n";
         let code = lesson.code[language];
         if (wrapper) code = language === "java" ? `public class Main {\n${code}${wrapper.java}\n}` : code + wrapper[language];
         await writeFile(join(directory,file),code);
@@ -51,7 +51,7 @@ for (const language of ["c","python","java"] as const) {
         const output = language === "python" ? run(python,[file],directory,sample) :
           language === "java" ? run("java",["-cp",directory,"Main"],directory,sample) :
           run(executable,[],directory,sample);
-        assert.equal(output,wrapper?.expected ?? "2\n",lesson.title);
+        assert.equal(output,wrapper?.expected ?? (lesson.id === "running-total" ? "4 -4 -1 0\n" : "2\n"),lesson.title);
       }
     } finally {
       assert.equal(dirname(directory),tempRoot);
