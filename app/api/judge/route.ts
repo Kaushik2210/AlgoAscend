@@ -1,4 +1,5 @@
 import { evaluateSubmission, validateRequest } from "@/lib/judge";
+import { readJson } from "@/lib/http";
 import type { Language } from "@/lib/curriculum";
 
 export const runtime = "nodejs";
@@ -6,26 +7,8 @@ let active = 0;
 let windowStart = 0;
 let requests = 0;
 
-async function readBody(request: Request): Promise<unknown> {
-  const reader = request.body?.getReader();
-  if (!reader) throw new Error("Missing body");
-  const decoder = new TextDecoder();
-  let text = "";
-  let size = 0;
-  for (;;) {
-    const { done, value } = await reader.read();
-    if (done) return JSON.parse(text + decoder.decode());
-    size += value.byteLength;
-    if (size > 96_000) {
-      await reader.cancel();
-      throw new Error("Request too large");
-    }
-    text += decoder.decode(value,{stream:true});
-  }
-}
-
 const failure = (error: string,status: number) => Response.json({error},{status});
-const decode = (raw: unknown) => typeof raw === "string" ? Buffer.from(raw,"base64").toString("utf8").slice(0,8000) : "";
+const decode = (raw: unknown) => typeof raw === "string" ? Buffer.from(raw,"base64").toString("utf8") : "";
 const encode = (text: string) => Buffer.from(text,"utf8").toString("base64");
 
 export async function POST(request: Request) {
@@ -41,7 +24,7 @@ export async function POST(request: Request) {
   active++;
   requests++;
   try {
-    const input = validateRequest(await readBody(request).catch(() => null));
+    const input = validateRequest(await readJson(request.body,96_000).catch(() => null));
     if (!input) return failure("Check the challenge, language, source and input size.",400);
     const endpoint = new URL(url);
     endpoint.pathname = endpoint.pathname.replace(/\/$/,"") + "/submissions";

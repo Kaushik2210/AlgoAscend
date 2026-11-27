@@ -63,7 +63,7 @@ nav a:hover,nav a[aria-current],.github-link:hover {color:var(--accent)}
 .eyebrow {display:flex;align-items:center;gap:9px;font-size:.75rem;font-weight:650;letter-spacing:.105em;color:var(--accent)}
 .eyebrow>span {display:inline-block;width:7px;height:7px;background:currentColor;border-radius:50%}
 .hero-eyebrow {display:inline-flex;padding:7px 11px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
-.hero h1 {font-size:clamp(3.6rem,5.5vw,5.25rem);line-height:1.015;letter-spacing:-.074em;margin:24px 0 22px;font-weight:750;text-wrap:initial}
+.hero h1 {font-size:clamp(3.6rem,5.5vw,5.25rem);line-height:1.015;letter-spacing:-.055em;margin:24px 0 22px;font-weight:750;text-wrap:initial}
 .hero h1 em {font-style:normal;color:var(--accent)}
 .hero-copy>p {font-size:19px;max-width:455px;line-height:1.6}
 .hero-actions {display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}

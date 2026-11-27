@@ -45,7 +45,7 @@ export async function evaluateSubmission(request: RequestData, run: Runner): Pro
       ? (normalize(output.stdout) === normalize(item.expected) ? "Accepted" : "Wrong answer")
       : verdicts[output.status] ?? "Judge error";
     if (index > 0) cases.push({label:`Hidden case ${index}`,verdict});
-    else cases.push({label:submit ? "Sample case" : "Run result",verdict,stdout:output.stdout,expected:item.expected,stderr:output.stderr,compileOutput:output.compileOutput,time:output.time,memory:output.memory});
+    else cases.push({label:submit ? "Sample case" : "Run result",verdict,stdout:output.stdout.slice(0,8000),expected:item.expected,stderr:output.stderr.slice(0,8000),compileOutput:output.compileOutput.slice(0,8000),time:output.time,memory:output.memory});
     if (verdict !== "Accepted" && verdict !== "Executed") return {verdict,cases};
   }
   return {verdict:cases[0].verdict,cases};
