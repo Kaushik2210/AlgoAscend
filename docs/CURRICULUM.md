@@ -4,8 +4,8 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 
 | Stage | Published lessons | Remaining coverage from the brief |
 | --- | --- | --- |
-| 00 · Computational thinking | Input, process, output, binary representation | Program execution, problem decomposition, logical reasoning, flowcharts, compilers and interpreters |
-| 01 · Programming fundamentals | Loops and running totals, conditionals and functions | Types, conversions, constants, operators, scope, nested loops, debugging, pattern printing, and language-specific modules for C, Python and Java |
+| 00 · Computational thinking | Input, process, output, binary representation, problem decomposition and pseudocode | Program execution, logical reasoning, flowcharts, compilers and interpreters |
+| 01 · Programming fundamentals | Loops and running totals, conditionals and functions, nested loops, integer types and division | Additional types and operators, conversions, constants, scope, debugging, pattern printing, and language-specific modules for C, Python and Java |
 | 02 · Algorithmic foundations | Recursion and growth | Space complexity, Ω and Θ bounds, amortized analysis, recurrences, invariants, formal correctness and constraint analysis |
 | 03 · Essential data structures | Stacks and brackets, circular queues | Arrays, strings, matrices, linked lists and variants, deques, sets, hash tables, priority queues and heaps |
 | 04 · Essential algorithmic patterns | Binary search, bubble sort, prefix sums, fixed-size sliding windows, difference arrays | Linear search, binary search on answer, general two pointers, variable windows, suffix sums, frequency counting, hashing, additional sorts, merging intervals, monotonic stacks and queues, fast and slow pointers, coordinate compression and meet in the middle |

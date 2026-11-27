@@ -1,5 +1,7 @@
 import { applications } from "./applications.ts";
 import { corePatterns } from "./corePatterns.ts";
+import { decomposition } from "./decomposition.ts";
+import { earlyPractice } from "./earlyPractice.ts";
 import { fundamentals } from "./fundamentals.ts";
 import { graphAndDp } from "./graphAndDp.ts";
 import { numberTheory } from "./numberTheory.ts";
@@ -12,4 +14,5 @@ import { weightedPaths } from "./weightedPaths.ts";
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications,
   ...corePatterns, ...graphAndDp, ...numberTheory, ...queues, ...weightedPaths, ...rangeStructures,
+  ...decomposition, ...earlyPractice,
 ];

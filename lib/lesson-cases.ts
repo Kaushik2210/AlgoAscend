@@ -335,5 +335,51 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1 0\n",
       "expected": ""
     }
+  ],
+  "nested-loops-practice": [
+    {
+      "stdin": "1 1\n0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 1\n-6\n0\n8\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "2 2\n-1 -5\n-6 -2\n",
+      "expected": "0\n"
+    }
+  ],
+  "integer-types-and-division-practice": [
+    {
+      "stdin": "0 10\n",
+      "expected": "0 0\n"
+    },
+    {
+      "stdin": "5 7\n",
+      "expected": "0 5\n"
+    },
+    {
+      "stdin": "1000000000000000000 10\n",
+      "expected": "100000000000000000 0\n"
+    },
+    {
+      "stdin": "9007199254740993 2\n",
+      "expected": "4503599627370496 1\n"
+    }
+  ],
+  "problem-decomposition-practice": [
+    {
+      "stdin": "0 8\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "4 -3\n-4 -3 -2 0\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "3 8\n1 2 3\n",
+      "expected": "0\n"
+    }
   ]
 };

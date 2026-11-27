@@ -17,6 +17,8 @@ test("every original challenge has a matching lesson and a complete editorial", 
 test("a beginner continues through each stage before tackling algorithmic patterns", () => {
   assert.equal(recommendNext("new","fundamentals",[])?.id,"input-output");
   assert.equal(recommendNext("new","fundamentals",["input-output"])?.id,"binary-representation");
-  assert.equal(recommendNext("new","fundamentals",["input-output","binary-representation","running-total","conditionals-and-functions"])?.id,"recursion-and-growth");
+  assert.equal(recommendNext("new","fundamentals",["input-output","binary-representation"])?.id,"problem-decomposition");
+  const completedFoundations = lessons.filter(lesson => lesson.stage < 2).map(lesson => lesson.id);
+  assert.equal(recommendNext("new","fundamentals",completedFoundations)?.id,"recursion-and-growth");
   assert.equal(recommendNext("practice","contests",[])?.id,"bubble-sort");
 });
