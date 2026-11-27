@@ -491,5 +491,97 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "5\n1 2 2 -4 9\n",
       "expected": "9 -4 2 2 1\n"
     }
+  ],
+  "linear-search-practice": [
+    {
+      "stdin": "0 7\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4 0\n0 3 0 1\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 2\n1 3 7\n",
+      "expected": "-1\n"
+    }
+  ],
+  "binary-search-on-answer-practice": [
+    {
+      "stdin": "3 1\n2 3 5\n",
+      "expected": "10\n"
+    },
+    {
+      "stdin": "3 3\n2 3 5\n",
+      "expected": "5\n"
+    },
+    {
+      "stdin": "5 3\n5 1 1 1 5\n",
+      "expected": "5\n"
+    }
+  ],
+  "variable-sliding-window-practice": [
+    {
+      "stdin": "3 7\n0 0 7\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "4 12\n1 0 2 3\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "0 1\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "4 10\n2 3 1 4\n",
+      "expected": "4\n"
+    }
+  ],
+  "suffix-sums-practice": [
+    {
+      "stdin": "0 2\n0 0\n",
+      "expected": "0\n0\n"
+    },
+    {
+      "stdin": "4 3\n2 -9 4 -3\n2 0 1\n",
+      "expected": "1\n-6\n-8\n"
+    },
+    {
+      "stdin": "2 0\n5 6\n",
+      "expected": ""
+    }
+  ],
+  "dfs-connected-components-practice": [
+    {
+      "stdin": "4 0\n",
+      "expected": "4\n"
+    },
+    {
+      "stdin": "3 4\n0 0\n0 1\n0 1\n1 2\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "1 0\n",
+      "expected": "1\n"
+    }
+  ],
+  "topological-sorting-practice": [
+    {
+      "stdin": "3 2\n1 2\n2 1\n",
+      "expected": "CYCLE\n"
+    },
+    {
+      "stdin": "3 3\n1 0\n1 0\n1 2\n",
+      "expected": "1 0 2\n"
+    },
+    {
+      "stdin": "1 1\n0 0\n",
+      "expected": "CYCLE\n"
+    },
+    {
+      "stdin": "3 0\n",
+      "expected": "0 1 2\n"
+    }
   ]
 };
