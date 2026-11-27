@@ -4,8 +4,8 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 
 | Stage | Published lessons | Remaining coverage from the brief |
 | --- | --- | --- |
-| 00 · Computational thinking | Input, process, output, binary representation, problem decomposition and pseudocode | Program execution, logical reasoning, flowcharts, compilers and interpreters |
-| 01 · Programming fundamentals | Loops and running totals, conditionals and functions, nested loops, integer types and division | Additional types and operators, conversions, constants, scope, debugging, pattern printing, and language-specific modules for C, Python and Java |
+| 00 · Computational thinking | Input, process, output, binary representation, problem decomposition and pseudocode, program execution and translation, flowchart decisions | Additional logical reasoning exercises |
+| 01 · Programming fundamentals | Loops and running totals, conditionals and functions, nested loops, integer types and division, variable scope | Additional types and operators, conversions, constants, debugging, pattern printing, and language-specific modules for C, Python and Java |
 | 02 · Algorithmic foundations | Recursion and growth | Space complexity, Ω and Θ bounds, amortized analysis, recurrences, invariants, formal correctness and constraint analysis |
 | 03 · Essential data structures | Stacks and brackets, circular queues | Arrays, strings, matrices, linked lists and variants, deques, sets, hash tables, priority queues and heaps |
 | 04 · Essential algorithmic patterns | Binary search, bubble sort, prefix sums, fixed-size sliding windows, difference arrays | Linear search, binary search on answer, general two pointers, variable windows, suffix sums, frequency counting, hashing, additional sorts, merging intervals, monotonic stacks and queues, fast and slow pointers, coordinate compression and meet in the middle |
@@ -26,3 +26,6 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 - [MIT 6.046J Design and Analysis of Algorithms](https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/)
 - [Knuth, Morris and Pratt, Fast Pattern Matching in Strings](https://epubs.siam.org/doi/10.1137/0206024)
 - [Fenwick, A New Data Structure for Cumulative Frequency Tables](https://onlinelibrary.wiley.com/doi/10.1002/spe.4380240306)
+
+- [Python glossary on bytecode and virtual machines](https://docs.python.org/3/glossary.html#term-bytecode)
+- [Oracle guide to HotSpot compilation](https://docs.oracle.com/javase/9/jrockit-hotspot/compilation-optimization.htm)

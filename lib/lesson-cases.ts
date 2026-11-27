@@ -290,6 +290,20 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "expected": "9592\n"
     }
   ],
+  "circular-queues-practice": [
+    {
+      "stdin": "1 5\n2\n1 -8\n1 0\n2\n2\n",
+      "expected": "EMPTY\nFULL\n-8\nEMPTY\n"
+    },
+    {
+      "stdin": "3 6\n1 8\n2\n1 3\n1 2\n2\n2\n",
+      "expected": "8\n3\n2\n"
+    },
+    {
+      "stdin": "1 0\n",
+      "expected": ""
+    }
+  ],
   "dijkstra-shortest-path-practice": [
     {
       "stdin": "3 1 0 2\n0 1 0\n",
@@ -322,18 +336,18 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "expected": "4\n-8\n"
     }
   ],
-  "circular-queues-practice": [
+  "problem-decomposition-practice": [
     {
-      "stdin": "1 5\n2\n1 -8\n1 0\n2\n2\n",
-      "expected": "EMPTY\nFULL\n-8\nEMPTY\n"
+      "stdin": "0 8\n",
+      "expected": "0\n"
     },
     {
-      "stdin": "3 6\n1 8\n2\n1 3\n1 2\n2\n2\n",
-      "expected": "8\n3\n2\n"
+      "stdin": "4 -3\n-4 -3 -2 0\n",
+      "expected": "3\n"
     },
     {
-      "stdin": "1 0\n",
-      "expected": ""
+      "stdin": "3 8\n1 2 3\n",
+      "expected": "0\n"
     }
   ],
   "nested-loops-practice": [
@@ -368,17 +382,45 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "expected": "4503599627370496 1\n"
     }
   ],
-  "problem-decomposition-practice": [
+  "program-execution-practice": [
     {
-      "stdin": "0 8\n",
+      "stdin": "0\n",
       "expected": "0\n"
     },
     {
-      "stdin": "4 -3\n-4 -3 -2 0\n",
+      "stdin": "4\nADD 9\nSET -2\nMUL -3\nADD 1\n",
+      "expected": "7\n"
+    },
+    {
+      "stdin": "2\nMUL 5\nADD 2\n",
+      "expected": "2\n"
+    }
+  ],
+  "flowchart-decisions-practice": [
+    {
+      "stdin": "1 20\n",
+      "expected": "EXPRESS\n"
+    },
+    {
+      "stdin": "0 11\n",
+      "expected": "FREIGHT\n"
+    },
+    {
+      "stdin": "0 0\n",
+      "expected": "STANDARD\n"
+    }
+  ],
+  "variable-scope-practice": [
+    {
+      "stdin": "0 10\n\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "4 -1\n-1 -2 0 -1\n",
       "expected": "3\n"
     },
     {
-      "stdin": "3 8\n1 2 3\n",
+      "stdin": "2 3\n1 2\n",
       "expected": "0\n"
     }
   ]
