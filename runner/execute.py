@@ -43,13 +43,13 @@ def oom_kills():
         return 0
 
 
-def execute(command, input_text, deadline, failure_status):
+def execute(command, input_text, deadline, failure_status, environment=ENV):
     before = oom_kills()
     started = monotonic()
     with TemporaryFile(dir="/work") as stdin, TemporaryFile(dir="/work") as stdout, TemporaryFile(dir="/work") as stderr:
         stdin.write(input_text.encode("utf-8"))
         stdin.seek(0)
-        with subprocess.Popen(command, stdin=stdin, stdout=stdout, stderr=stderr, env=ENV, start_new_session=True) as child:
+        with subprocess.Popen(command, stdin=stdin, stdout=stdout, stderr=stderr, env=environment, start_new_session=True) as child:
             timed_out = False
             try:
                 child.wait(timeout=deadline)
@@ -82,12 +82,29 @@ def execute(command, input_text, deadline, failure_status):
 def main():
     job = json.load(sys.stdin)
     filename, compile_command, run_command = LANGUAGES[job["language"]]
+    environment = ENV
+    vm_limits = os.getenv("ALGO_VM_LIMITS") == "1"
+    if vm_limits and job["language"] == "java":
+        jdk = "/usr/lib/jvm/java-17-openjdk-amd64"
+        environment = {**ENV, "JAVA_HOME": jdk, "LD_LIBRARY_PATH": f"{jdk}/lib:{jdk}/lib/server"}
+        compile_command = (f"{jdk}/bin/javac", *JAVAC[1:])
+        run_command = (f"{jdk}/bin/java", "-XX:+ExitOnOutOfMemoryError", *JAVA[1:])
+    elif vm_limits:
+        address_limit = ("/usr/bin/prlimit", "--as=268435456:268435456", "--")
+        compile_command = address_limit + compile_command
+        run_command = address_limit + run_command
+
     Path(filename).write_text(job["source"], encoding="utf-8")
-    status, output, errors, _ = execute(compile_command, "", 6, 6)
+    status, output, errors, _ = execute(compile_command, "", 6, 6, environment)
     if status != 3:
         return dict(status=status, stdout="", stderr="", compileOutput=errors or output, time=None, memory=None)
 
-    status, output, errors, elapsed = execute(run_command, job["stdin"], 3, 12)
+    status, output, errors, elapsed = execute(run_command, job["stdin"], 3, 12, environment)
+    if vm_limits and status == 12:
+        if job["language"] == "python" and errors.rstrip().endswith("MemoryError"):
+            status = 17
+        elif job["language"] == "java" and output.startswith("Terminating due to java.lang.OutOfMemoryError"):
+            status = 17
     return dict(status=status, stdout=output, stderr=errors, compileOutput="", time=f"{elapsed:.3f}", memory=None)
 
 

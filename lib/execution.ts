@@ -6,7 +6,7 @@ const decode = (raw: unknown) => typeof raw === "string" ? Buffer.from(raw,"base
 const encode = (text: string) => Buffer.from(text,"utf8").toString("base64");
 
 export function executionAvailable() {
-  return Boolean((process.env.ALGO_RUNNER_URL && process.env.ALGO_RUNNER_TOKEN) || process.env.JUDGE0_URL);
+  return Boolean((process.env.ALGO_RUNNER_URL && process.env.ALGO_RUNNER_TOKEN) || process.env.JUDGE0_URL || process.env.ALGO_CLOUD_SNAPSHOT);
 }
 
 export async function executeCode(source: string, language: Language, stdin: string, signal: AbortSignal): Promise<Execution> {

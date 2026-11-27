@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@monaco-editor/react": "latest",
+    "@vercel/sandbox": "3.6.1",
     "geist": "latest",
     "lucide-react": "latest",
     "monaco-editor": "latest",

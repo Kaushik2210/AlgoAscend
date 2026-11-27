@@ -3,7 +3,7 @@ import type { Language } from "./curriculum.ts";
 
 type RequestData = {problemId: string; language: Language; source: string; mode: "run" | "submit"; stdin: string};
 export type Execution = {status: number; stdout: string; stderr: string; compileOutput: string; time: string | null; memory: number | null};
-type Runner = (source: string, language: Language, stdin: string) => Promise<Execution>;
+export type Runner = (source: string, language: Language, stdin: string) => Promise<Execution>;
 type CaseResult = {label: string; verdict: string; stdout?: string; expected?: string; stderr?: string; compileOutput?: string; time?: string | null; memory?: number | null};
 export type JudgeResult = {verdict: string; cases: CaseResult[]};
 

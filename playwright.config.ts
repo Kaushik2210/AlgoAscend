@@ -9,6 +9,6 @@ export default defineConfig({
     url:"http://127.0.0.1:3100",
     reuseExistingServer:!process.env.CI,
     timeout:60_000,
-    env:process.env.ALGO_LIVE_EXECUTION === "1" ? undefined : {ALGO_RUNNER_URL:"",JUDGE0_URL:"",MENTOR_CHAT_URL:""},
+    env:process.env.ALGO_LIVE_EXECUTION === "1" ? undefined : {ALGO_RUNNER_URL:"",ALGO_CLOUD_SNAPSHOT:"",JUDGE0_URL:"",MENTOR_CHAT_URL:""},
   },
 });

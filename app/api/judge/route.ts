@@ -3,6 +3,7 @@ import { executeCode, executionAvailable } from "@/lib/execution";
 import { readJson } from "@/lib/http";
 
 export const runtime = "nodejs";
+export const maxDuration = 75;
 let active = 0;
 let windowStart = 0;
 let requests = 0;
@@ -23,6 +24,11 @@ export async function POST(request: Request) {
   try {
     const input = validateRequest(await readJson(request.body,192_000).catch(() => null));
     if (!input) return failure("Check the challenge, language, source and input size.",400);
+    const snapshot = process.env.ALGO_CLOUD_SNAPSHOT;
+    if (snapshot) {
+      const {withCloudRunner} = await import("@/lib/cloud-execution");
+      return Response.json(await withCloudRunner(snapshot,request.signal,run => evaluateSubmission(input,run)));
+    }
     return Response.json(await evaluateSubmission(input,(source,language,stdin) => executeCode(source,language,stdin,request.signal)));
   } catch {
     return failure("The execution service did not return a result. Try again in a moment.",502);
