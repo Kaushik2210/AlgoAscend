@@ -17,7 +17,7 @@ npm ci
 npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000). Guest onboarding, four interactive lessons, the full curriculum roadmap, three visual traces, and four original coding problems work without an account or service credentials. This browser stores your progress, editor drafts, and notes.
+Open [localhost:3000](http://localhost:3000). Guest onboarding, interactive lessons across all 15 roadmap stages, three algorithm visualizers, and matching original coding challenges work without an account or service credentials. This browser stores your progress, editor drafts, and notes.
 
 ## Learn by doing
 

@@ -12,7 +12,7 @@ export function Roadmap() {
   return <div className="roadmap-grid">
     <div className="roadmap-list">{stages.map((stage, index) => {
       const available = lessons.filter(lesson => lesson.stage === index);
-      return <details key={stage} open={available.length > 0}><summary><span className="stage-number">{String(index).padStart(2, "0")}</span> {stage}<span className="stage-status">{available.length ? `${available.length} ${available.length === 1 ? "lesson" : "lessons"}` : "Planned"}</span></summary>{available.length ? <ul>{available.map(lesson => {
+      return <details key={stage} open={index === (next?.stage ?? 0)}><summary><span className="stage-number">{String(index).padStart(2, "0")}</span> {stage}<span className="stage-status">{available.length ? `${available.length} ${available.length === 1 ? "lesson" : "lessons"}` : "Planned"}</span></summary>{available.length ? <ul>{available.map(lesson => {
         const completed = guest.completed.includes(lesson.id);
         return <li key={lesson.id}><Link href={`/learn/${lesson.id}`}>{completed ? <CheckCircle2 size={17} className="success"/> : <Circle size={17}/>}<span>{lesson.title}</span><span className="stage-status">{completed ? "Complete" : `${lesson.minutes} min`}</span></Link></li>;
       })}</ul> : <p>Lessons for this stage are in development.</p>}</details>;

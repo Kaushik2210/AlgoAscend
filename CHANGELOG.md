@@ -10,3 +10,4 @@
 - Added Pattern Detective cases and complete editorials for the original challenges.
 - Added live C, Python, and Java execution using disposable local Docker sandboxes.
 - Deployed the app online with isolated hosted execution for C, Python, and Java.
+- Published lessons and executable practice across all 15 roadmap stages, with step-by-step examples and prediction checks.

@@ -331,7 +331,7 @@ public class Main {
       "title": "Read the nested signal",
       "description": "Decide whether paired parentheses, square brackets, and braces are correctly nested.",
       "format": "Read one nonempty token containing only brackets. Print YES for valid nesting, otherwise NO.",
-      "constraints": "1 ≤ token length ≤ 10,000.",
+      "constraints": "1 ≤ token length ≤ 8,000.",
       "input": "([]{})\n",
       "output": "YES\n",
       "hints": [
