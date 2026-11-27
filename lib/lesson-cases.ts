@@ -289,5 +289,51 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "100000\n",
       "expected": "9592\n"
     }
+  ],
+  "dijkstra-shortest-path-practice": [
+    {
+      "stdin": "3 1 0 2\n0 1 0\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "2 2 0 1\n0 1 0\n0 1 7\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "1 0 0 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 3 0 2\n0 2 8\n0 1 1\n1 2 4\n",
+      "expected": "5\n"
+    }
+  ],
+  "segment-tree-range-minimum-practice": [
+    {
+      "stdin": "1 4\n5\n2 0 0\n1 0 -7\n2 0 0\n1 0 8\n",
+      "expected": "5\n-7\n"
+    },
+    {
+      "stdin": "3 3\n4 9 6\n2 0 2\n1 2 2\n2 1 2\n",
+      "expected": "4\n2\n"
+    },
+    {
+      "stdin": "4 3\n4 4 4 4\n1 3 -8\n2 0 2\n2 0 3\n",
+      "expected": "4\n-8\n"
+    }
+  ],
+  "circular-queues-practice": [
+    {
+      "stdin": "1 5\n2\n1 -8\n1 0\n2\n2\n",
+      "expected": "EMPTY\nFULL\n-8\nEMPTY\n"
+    },
+    {
+      "stdin": "3 6\n1 8\n2\n1 3\n1 2\n2\n2\n",
+      "expected": "8\n3\n2\n"
+    },
+    {
+      "stdin": "1 0\n",
+      "expected": ""
+    }
   ]
 };
