@@ -1,5 +1,5 @@
 import { randomBytes } from "node:crypto";
-import { appendFile, readFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import { parseEnv } from "node:util";
 
 const file = ".env.local";
@@ -8,17 +8,24 @@ const existing = await readFile(file,"utf8").catch(error => {
   throw error;
 });
 const env = parseEnv(existing);
-const port = env.ALGO_RUNNER_PORT || "2359";
-const values = {
+const port = Number(process.env.ALGO_RUNNER_PORT || env.ALGO_RUNNER_PORT || "2359");
+if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error("Invalid ALGO_RUNNER_PORT.");
+if (env.ALGO_RUNNER_TOKEN && env.ALGO_RUNNER_TOKEN.length < 32) throw new Error("Use an ALGO_RUNNER_TOKEN of at least 32 characters.");
+
+const defaults = {
   ALGO_RUNNER_URL: `http://127.0.0.1:${port}/execute`,
   ALGO_RUNNER_TOKEN: randomBytes(32).toString("hex"),
 };
-const missing = Object.entries(values).filter(([key]) => !Object.hasOwn(env,key));
-if (env.ALGO_RUNNER_URL === "" || (Object.hasOwn(env,"ALGO_RUNNER_TOKEN") && env.ALGO_RUNNER_TOKEN.length < 32)) {
-  throw new Error("Existing local sandbox settings are incomplete. Update ALGO_RUNNER_URL and ALGO_RUNNER_TOKEN in .env.local.");
+let next = existing;
+for (const [key,value] of Object.entries(defaults)) {
+  if (env[key]) continue;
+  const assignment = new RegExp(`^[ \\t]*(?:export[ \\t]+)?${key}[ \\t]*=[^\\r\\n]*`, "gm");
+  const placeholder = [...next.matchAll(assignment)].at(-1);
+  if (placeholder) {
+    next = next.slice(0,placeholder.index) + `${key}=${value}` + next.slice(placeholder.index + placeholder[0].length);
+  } else {
+    next += `${next && !next.endsWith("\n") ? "\n" : ""}${key}=${value}\n`;
+  }
 }
-if (missing.length) {
-  const lines = missing.map(([key,value]) => `${key}=${value}`).join("\n");
-  await appendFile(file,`${existing && !existing.endsWith("\n") ? "\n" : ""}${lines}\n`,{encoding:"utf8",mode:0o600});
-}
+if (next !== existing) await writeFile(file,next,{encoding:"utf8",mode:0o600});
 process.stdout.write("Local sandbox configuration is ready in .env.local.\n");

@@ -11,7 +11,7 @@ npm run runner:serve
 
 The configuration command writes a random runner token and the loopback URL to the ignored `.env.local` file. The build command creates the local sandbox image. The runner listens on `127.0.0.1:2359` by default. Keep that process running while using the workspace.
 
-In another terminal, start the app with `npm run dev`, or use `npm run build` and `npm run start` for its production build. Open [Signal Sum](http://127.0.0.1:3000/practice/signal-sum), choose the runtime, and use **Run code** or **Submit code**. Java submissions use a class named `Main`. To use a custom Docker CLI, set the optional server-side `ALGO_DOCKER_BIN` variable.
+In another terminal, start the app with `npm run dev`, or use `npm run build` and `npm run start` for its production build. Open [Signal Sum](http://127.0.0.1:3000/practice/signal-sum), choose the runtime, and use **Run code** or **Submit code**. Java submissions use a class named `Main`. [View a live submission](screenshots/live-execution.png). To use a custom Docker CLI, set the optional server-side `ALGO_DOCKER_BIN` variable.
 
 ## Execution boundaries
 
