@@ -208,6 +208,10 @@ test("a learner steps through a worked example and opens its matching challenge"
   await expect(trace.getByText("10 | value = 2",{exact:true})).toBeVisible();
   await trace.getByRole("button",{name:"Previous step"}).click();
   await expect(trace.getByText("Step 1 of 4")).toBeVisible();
+  for (const theme of ["light","dark"] as const) {
+    await page.emulateMedia({colorScheme:theme,reducedMotion:"reduce"});
+    expect((await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze()).violations).toEqual([]);
+  }
   await page.getByRole("link",{name:"Practice this concept"}).click();
   await expect(page.getByRole("heading",{name:"Decode a binary word"})).toBeVisible();
 });

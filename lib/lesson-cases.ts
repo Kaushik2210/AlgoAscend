@@ -193,5 +193,101 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3 -7\n-4 -3 0\n",
       "expected": "YES\n"
     }
+  ],
+  "fixed-sliding-window-practice": [
+    {
+      "stdin": "3 2\n-4 -1 -6\n",
+      "expected": "-5\n"
+    },
+    {
+      "stdin": "1 1\n-8\n",
+      "expected": "-8\n"
+    },
+    {
+      "stdin": "4 4\n2 -4 6 1\n",
+      "expected": "5\n"
+    }
+  ],
+  "difference-arrays-practice": [
+    {
+      "stdin": "3 0\n",
+      "expected": "0 0 0\n"
+    },
+    {
+      "stdin": "1 3\n0 0 7\n0 0 -9\n0 0 1\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4 1\n2 2 9\n",
+      "expected": "0 0 9 0\n"
+    }
+  ],
+  "disjoint-set-union-practice": [
+    {
+      "stdin": "1 2\n2 0 0\n1 0 0\n",
+      "expected": "YES\n"
+    },
+    {
+      "stdin": "3 5\n2 0 2\n1 0 1\n1 1 0\n2 1 2\n2 1 0\n",
+      "expected": "NO\nNO\nYES\n"
+    },
+    {
+      "stdin": "3 0\n",
+      "expected": ""
+    }
+  ],
+  "longest-common-subsequence-practice": [
+    {
+      "stdin": "axbyc abc\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "abc xyz\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "aba baa\n",
+      "expected": "2\n"
+    },
+    {
+      "stdin": "abc abc\n",
+      "expected": "3\n"
+    }
+  ],
+  "modular-exponentiation-practice": [
+    {
+      "stdin": "0 0 7\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "8 0 1\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "999999999 2 1000000000\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "2 1000000000000000000 7\n",
+      "expected": "2\n"
+    }
+  ],
+  "sieve-of-eratosthenes-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "2\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "49\n",
+      "expected": "15\n"
+    },
+    {
+      "stdin": "100000\n",
+      "expected": "9592\n"
+    }
   ]
 };

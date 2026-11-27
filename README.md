@@ -22,7 +22,7 @@ Open [localhost:3000](http://localhost:3000). Guest onboarding, interactive less
 ## Learn by doing
 
 - **Start** chooses a language, experience level, goal, and daily time budget.
-- **Roadmap** recommends the next published lesson and marks completed lessons.
+- **Roadmap** recommends the next published lesson and marks completed lessons. The [curriculum coverage table](docs/CURRICULUM.md) lists published and planned topics.
 - **Visual Lab** walks through first-occurrence binary search, bubble sort, and running totals. Edit the array, step through pseudocode, and compare binary and linear search on the same input.
 - **Pattern Detective** gives feedback on an approach and shows counterexamples for tempting alternatives. [See a worked case](docs/screenshots/pattern-detective.png).
 - **Practice** includes a locally served Monaco editor, a plain-text editor, a resizable workspace, individual drafts, notes, progressive hints, and opt-in editorials.
