@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, Braces, ChevronDown, CircleDot, Pause, Play, RotateCcw } from "lucide-react";
 import { binaryTrace, bubbleTrace, parseValues, traces } from "@/lib/trace";
+import { SearchBattle } from "./search-battle";
 import type { Algorithm, Frame } from "@/lib/trace";
 
 function makeFrames(algorithm: Algorithm): Frame[] {
   return algorithm === "binary" ? binaryTrace(traces.binary.values, traces.binary.target) : bubbleTrace(traces.bubble.values);
 }
 
-export function TracePanel({ preview = false, initial = "binary" }: { preview?: boolean; initial?: Algorithm }) {
+export function TracePanel({ preview = false, initial = "binary", battle = false }: { preview?: boolean; initial?: Algorithm; battle?: boolean }) {
   const [algorithm, setAlgorithm] = useState<Algorithm>(initial);
   const [frames, setFrames] = useState(() => makeFrames(initial));
   const [index, setIndex] = useState(preview ? 1 : 0);
@@ -24,6 +25,7 @@ export function TracePanel({ preview = false, initial = "binary" }: { preview?: 
   const last = index === frames.length - 1;
   const max = Math.max(1, ...frame.values.map(Math.abs));
   const middle = frame.active[0];
+  const final = frames[frames.length - 1];
   const contrastingWindow = algorithm === "binary" ? "Search window" : "Unsorted window";
 
   useEffect(() => {
@@ -113,6 +115,7 @@ export function TracePanel({ preview = false, initial = "binary" }: { preview?: 
             <div><strong>Variables</strong><dl className="variables"><dt>low</dt><dd>{frame.low}</dd><dt>high</dt><dd>{frame.high}</dd><dt>{algorithm === "binary" ? "mid" : "left"}</dt><dd>{middle ?? "—"}</dd><dt>comparisons</dt><dd>{frame.operations}</dd></dl>
             <label>Speed<select value={speed} onChange={event => setSpeed(Number(event.target.value))}><option value={0.5}>0.5×</option><option value={1}>1×</option><option value={2}>2×</option></select></label></div>
           </div>
+          {battle && algorithm === "binary" && <SearchBattle values={final.values} target={appliedTarget} binaryCount={final.operations} match={final.result ?? -1}/> }
         </>}
       </div>
     </div>

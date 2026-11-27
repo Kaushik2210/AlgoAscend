@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { binaryTrace, bubbleTrace, parseValues } from "../lib/trace.ts";
+import { binaryTrace, bubbleTrace, linearFind, parseValues } from "../lib/trace.ts";
 
 test("binary search narrows the interval and returns the first matching index", () => {
   const frames = binaryTrace([2, 4, 4, 4, 9, 17], 4);
@@ -27,4 +27,10 @@ test("input accepts bounded integers and rejects malformed lists", () => {
   assert.throws(() => parseValues("1,,2"));
   assert.throws(() => parseValues("1e2"));
   assert.throws(() => parseValues("1000"));
+});
+
+test("the linear comparison uses the same array and counts inspected values", () => {
+  assert.deepEqual(linearFind([2, 7, 7, 9], 7), {index:1, comparisons:2});
+  assert.deepEqual(linearFind([2, 7, 7, 9], 4), {index:-1, comparisons:4});
+  assert.deepEqual(linearFind([], 4), {index:-1, comparisons:0});
 });

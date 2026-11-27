@@ -101,3 +101,10 @@ export function bubbleTrace(input: readonly number[]): Frame[] {
   add(4, "The array is sorted.");
   return frames;
 }
+
+export function linearFind(values: readonly number[], target: number) {
+  for (const [index, value] of values.entries()) {
+    if (value === target) return {index, comparisons:index + 1};
+  }
+  return {index:-1, comparisons:values.length};
+}
