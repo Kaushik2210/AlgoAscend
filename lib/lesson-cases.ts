@@ -423,5 +423,73 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "2 3\n1 2\n",
       "expected": "0\n"
     }
+  ],
+  "amortized-array-growth-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "1 0\n"
+    },
+    {
+      "stdin": "4\n",
+      "expected": "4 3\n"
+    },
+    {
+      "stdin": "5\n",
+      "expected": "8 7\n"
+    },
+    {
+      "stdin": "100000\n",
+      "expected": "131072 131071\n"
+    }
+  ],
+  "asymptotic-bounds-practice": [
+    {
+      "stdin": "0 0\n",
+      "expected": "FITS\n"
+    },
+    {
+      "stdin": "4 6\n",
+      "expected": "FITS\n"
+    },
+    {
+      "stdin": "1000000000 499999999499999999\n",
+      "expected": "EXCEEDS\n"
+    },
+    {
+      "stdin": "1000000000 499999999500000000\n",
+      "expected": "FITS\n"
+    }
+  ],
+  "loop-invariants-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4\n1 1 1 1\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4\n1 1 0 -1\n",
+      "expected": "2\n"
+    },
+    {
+      "stdin": "2\n0 -1\n",
+      "expected": "1\n"
+    }
+  ],
+  "singly-linked-lists-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "\n"
+    },
+    {
+      "stdin": "1\n-7\n",
+      "expected": "-7\n"
+    },
+    {
+      "stdin": "5\n1 2 2 -4 9\n",
+      "expected": "9 -4 2 2 1\n"
+    }
   ]
 };
