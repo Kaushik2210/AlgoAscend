@@ -183,3 +183,18 @@ test("Pattern Detective explains counterexamples and remembers solved cases",asy
     expect((await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze()).violations).toEqual([]);
   }
 });
+
+test("challenge editorials stay collapsed until requested and link to tested examples",async ({page}) => {
+  await page.setViewportSize({width:375,height:850});
+  await page.emulateMedia({colorScheme:"dark",reducedMotion:"reduce"});
+  await page.goto("/practice/first-signal");
+  await expect(page.getByRole("heading",{name:"Why it works"})).toBeHidden();
+  await page.getByText("Reveal the approach").click();
+  await expect(page.getByRole("heading",{name:"Why it works"})).toBeVisible();
+  await expect(page.getByText("An empty array.",{exact:true})).toBeVisible();
+  await page.getByRole("button",{name:"Use plain text editor"}).click();
+  expect((await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze()).violations).toEqual([]);
+  await page.getByRole("link",{name:"See the C, Python, and Java examples"}).click();
+  await expect(page).toHaveURL(/\/learn\/binary-search#implementation$/);
+  await expect(page.getByRole("heading",{name:"From pseudocode to implementation"})).toBeVisible();
+});

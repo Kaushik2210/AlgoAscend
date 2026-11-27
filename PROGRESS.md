@@ -4,7 +4,7 @@
 
 - Public GitHub repository, platform research, phased architecture plan, and proposed account schema.
 - Responsive landing page, light and dark themes, guest onboarding, and personalized roadmap with all 15 stages listed.
-- Four published lessons and four original challenges. Progress, source drafts, personal notes, and manual external completion persist in the browser.
+- Four published lessons, four original challenges with editorials, and three Pattern Detective cases. Progress, source drafts, personal notes, and manual external completion persist in the browser.
 - Three visual traces with editable input, pseudocode, playback, and state. Algorithm Battle measures binary and linear search on the same input.
 - Monaco workspace with authored hints, an operation-budget estimator, and optional Judge0 and AlgoMentor adapters.
 - Explainable revision intervals and an editable mistake notebook.

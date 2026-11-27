@@ -22,7 +22,8 @@ Open [localhost:3000](http://localhost:3000). Guest onboarding, four interactive
 - **Start** chooses a language, experience level, goal, and daily time budget.
 - **Roadmap** recommends the next published lesson and marks completed lessons.
 - **Visual Lab** walks through first-occurrence binary search, bubble sort, and running totals. Edit the array, step through pseudocode, and compare binary and linear search on the same input.
-- **Practice** includes a locally served Monaco editor, a plain-text editor, a resizable workspace, individual drafts, notes, and progressive hints.
+- **Pattern Detective** gives feedback on an approach and shows counterexamples for tempting alternatives. [See a worked case](docs/screenshots/pattern-detective.png).
+- **Practice** includes a locally served Monaco editor, a plain-text editor, a resizable workspace, individual drafts, notes, progressive hints, and opt-in editorials.
 - **Revision** schedules reviews from prediction results. The mistake notebook records missed predictions and failed submissions and lets learners add their own explanation.
 - **External practice** links to five official platforms with manual completion, and reads recent Codeforces ratings from the public API.
 
