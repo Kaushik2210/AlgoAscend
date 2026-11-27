@@ -1,0 +1,38 @@
+{
+  "name": "algoascend",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --disable-warning=ExperimentalWarning --experimental-strip-types --test tests/*.test.ts",
+    "test:coverage": "npm test -- --experimental-test-coverage",
+    "test:e2e": "playwright test"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "lucide-react": "latest",
+    "geist": "latest",
+    "@monaco-editor/react": "latest",
+    "monaco-editor": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@playwright/test": "latest",
+    "@axe-core/playwright": "latest",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "typescript": "^5.9"
+  }
+}
