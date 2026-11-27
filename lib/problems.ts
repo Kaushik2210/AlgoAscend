@@ -1,3 +1,4 @@
+import { publishedTopics } from "./lessons/index.ts";
 import type { Language } from "./curriculum.ts";
 
 export type Problem = {
@@ -61,4 +62,5 @@ export const problems: Problem[] = [
       complexity:"O(n²) worst-case time, O(n) best-case time with an early exit, and O(1) additional space beyond the input array.",
       edgeCases:["One reading.","An already sorted list with duplicates.","A descending list with negative values."],
     } },
+  ...publishedTopics.map(topic => topic.problem),
 ];

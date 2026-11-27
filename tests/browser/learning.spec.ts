@@ -198,3 +198,16 @@ test("challenge editorials stay collapsed until requested and link to tested exa
   await expect(page).toHaveURL(/\/learn\/binary-search#implementation$/);
   await expect(page.getByRole("heading",{name:"From pseudocode to implementation"})).toBeVisible();
 });
+
+test("a learner steps through a worked example and opens its matching challenge",async ({page}) => {
+  await page.setViewportSize({width:390,height:850});
+  await page.goto("/learn/binary-representation");
+  const trace = page.getByRole("heading",{name:"Trace the example"}).locator("..");
+  await expect(trace.getByText("Step 1 of 4")).toBeVisible();
+  await trace.getByRole("button",{name:"Next step"}).click();
+  await expect(trace.getByText("10 | value = 2",{exact:true})).toBeVisible();
+  await trace.getByRole("button",{name:"Previous step"}).click();
+  await expect(trace.getByText("Step 1 of 4")).toBeVisible();
+  await page.getByRole("link",{name:"Practice this concept"}).click();
+  await expect(page.getByRole("heading",{name:"Decode a binary word"})).toBeVisible();
+});

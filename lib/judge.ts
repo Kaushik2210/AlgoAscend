@@ -1,3 +1,4 @@
+import { lessonCases } from "./lesson-cases.ts";
 import { problems } from "./problems.ts";
 import type { Language } from "./curriculum.ts";
 
@@ -14,6 +15,7 @@ const verdicts: Record<number, string> = {
 };
 
 const hidden: Record<string, {stdin: string; expected: string}[]> = {
+  ...lessonCases,
   "signal-sum":[{stdin:"-10000 10000\n",expected:"0\n"},{stdin:"-10000 -10000\n",expected:"-20000\n"}],
   "rolling-total":[{stdin:"1\n-9\n",expected:"-9\n"},{stdin:"5\n-2 2 0 -5 -5\n",expected:"-2 0 0 -5 -10\n"}],
   "first-signal":[{stdin:"0 9\n\n",expected:"-1\n"},{stdin:"5 -2\n-2 -2 -2 -1 4\n",expected:"0\n"},{stdin:"4 3\n-1 0 2 5\n",expected:"-1\n"}],

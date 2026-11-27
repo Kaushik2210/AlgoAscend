@@ -1,3 +1,6 @@
+import { publishedTopics } from "./lessons/index.ts";
+import type { WorkedStep } from "./lessons/define.ts";
+
 export type Language = "c" | "python" | "java";
 export type Goal = "fundamentals" | "university" | "placement" | "interviews" | "contests" | "advanced";
 export type Experience = "new" | "basics" | "practice";
@@ -6,7 +9,7 @@ export const languageNames: Record<Language, string> = { c: "C", python: "Python
 export const goals: Record<Goal, string> = { fundamentals: "Programming fundamentals", university: "University exams", placement: "Placement preparation", interviews: "Technical interviews", contests: "Competitive programming", advanced: "Advanced algorithms" };
 export const experiences: Record<Experience, string> = { new: "Starting from scratch", basics: "I know the basics", practice: "I solve coding problems" };
 
-type Lesson = {
+export type Lesson = {
   id: string;
   title: string;
   stage: number;
@@ -28,6 +31,8 @@ type Lesson = {
   answers: string[];
   correct: number;
   feedback: string;
+  workedTrace?: WorkedStep[];
+  further?: string;
   algorithm?: "binary" | "bubble" | "accumulate";
   problem: string;
   pseudocode: string;
@@ -132,12 +137,13 @@ export const lessons: Lesson[] = [
     feedback: "The 4 swaps rightward whenever it meets a smaller neighbor, so it finishes at the end of the pass.",
     algorithm: "bubble", problem: "repair-order", pseudocode: "for end from n − 1 down to 1:\n  swapped ← false\n  for i from 0 to end − 1:\n    if a[i] > a[i + 1]:\n      swap a[i], a[i + 1]\n      swapped ← true\n  if swapped = false: stop", code: sortCode,
   },
+  ...publishedTopics.map(topic => topic.lesson),
 ];
 
 export const stages = ["Computational thinking", "Programming fundamentals", "Algorithmic foundations", "Essential data structures", "Algorithmic patterns", "Trees and hierarchies", "Graphs", "Recursion and backtracking", "Greedy algorithms", "Dynamic programming", "Competitive programming mathematics", "Advanced data structures", "String algorithms", "Advanced competitive programming", "Interview and placement preparation"];
 
 export function recommendNext(experience: Experience, goal: Goal, completed: string[]): Lesson | undefined {
-  const upcoming = lessons.filter(lesson => !completed.includes(lesson.id));
+  const upcoming = lessons.filter(lesson => !completed.includes(lesson.id)).sort((a,b) => a.stage-b.stage);
   if (experience === "new") return upcoming[0];
   const search = upcoming.find(lesson => lesson.id === "binary-search");
   const sort = upcoming.find(lesson => lesson.id === "bubble-sort");
