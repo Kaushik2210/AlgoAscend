@@ -14,10 +14,11 @@ export type Guest = {
   reviews: Record<string,Review>;
   mistakes: Record<string,Mistake>;
   externalCompleted: string[];
+  patternsSolved: string[];
 };
 
 const key = "algoascend-guest-v1";
-const defaults: Guest = { language: "python", goal: "fundamentals", experience: "new", minutes: 15, completed: [], solved: [], reviews: {}, mistakes: {}, externalCompleted: [] };
+const defaults: Guest = { language: "python", goal: "fundamentals", experience: "new", minutes: 15, completed: [], solved: [], reviews: {}, mistakes: {}, externalCompleted: [], patternsSolved: [] };
 let memory: string | null = null;
 
 function read(): string | null {

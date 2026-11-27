@@ -135,3 +135,12 @@ pre {margin:12px 0;background:var(--bg);border:1px solid var(--line);border-radi
 .array-tiles .bar-column.active {background:var(--primary);color:#fff}
 .array-tiles .bar-column.outside {background:var(--band)}
 .array-tiles .bar-column.active .bar-index {color:var(--accent)}
+.detective-grid {display:grid;grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:18px;align-items:start}
+.detective-list button {display:flex;align-items:center;gap:8px;text-align:left;min-height:44px;width:100%;margin-top:7px;padding:7px 9px;border:1px solid transparent;border-radius:7px;background:transparent;color:var(--muted)}
+.detective-list button:is(:hover,[aria-pressed="true"]) {border-color:var(--line);background:var(--raised);color:var(--text)}
+.detective-list button svg {color:var(--accent);flex:none}
+.detective-case h2 {margin-top:12px}
+.detective-case .quiz {margin-top:18px}
+.detective-feedback:not(:empty) {border-top:1px solid var(--line);padding-top:12px;margin-block:14px}
+.detective-feedback p {margin-top:7px}
+@media(max-width:700px) {.detective-grid {grid-template-columns:minmax(0,1fr)}}

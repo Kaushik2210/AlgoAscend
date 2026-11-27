@@ -164,3 +164,22 @@ test("running totals trace signed input and lead to a practice problem",async ({
   await page.getByRole("link",{name:"Practice this concept"}).click();
   await expect(page.getByRole("heading",{name:"Rolling Sensor Total"})).toBeVisible();
 });
+
+test("Pattern Detective explains counterexamples and remembers solved cases",async ({page}) => {
+  await page.goto("/practice");
+  await page.getByRole("link",{name:"Open Pattern Detective"}).click();
+  await page.getByRole("button",{name:"The balancing window",exact:true}).click();
+  await page.getByRole("radio",{name:"Shrink the left side whenever the sum exceeds the target"}).check();
+  await page.getByRole("button",{name:"Check approach"}).click();
+  await expect(page.getByText("A negative value can bring an oversized sum back down.",{exact:false})).toBeVisible();
+  await page.getByRole("radio",{name:"Track the earliest index of each cumulative total"}).check();
+  await page.getByRole("button",{name:"Check approach"}).click();
+  await expect(page.getByText("That approach fits")).toBeVisible();
+  await expect(page.getByText("1 of 3 solved")).toBeVisible();
+  await page.reload();
+  await expect(page.getByText("1 of 3 solved")).toBeVisible();
+  for (const theme of ["light","dark"] as const) {
+    await page.emulateMedia({colorScheme:theme});
+    expect((await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze()).violations).toEqual([]);
+  }
+});
