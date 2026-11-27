@@ -1,8 +1,10 @@
 import { analysisBasics } from "./analysisBasics.ts";
 import { applications } from "./applications.ts";
+import { arrayAndMap } from "./arrayAndMap.ts";
 import { corePatterns } from "./corePatterns.ts";
 import { correctnessBasics } from "./correctnessBasics.ts";
 import { decomposition } from "./decomposition.ts";
+import { dynamicMemory } from "./dynamicMemory.ts";
 import { earlyPractice } from "./earlyPractice.ts";
 import { executionBasics } from "./executionBasics.ts";
 import { fundamentals } from "./fundamentals.ts";
@@ -10,6 +12,7 @@ import { graphAndDp } from "./graphAndDp.ts";
 import { graphColoring } from "./graphColoring.ts";
 import { graphTraversal } from "./graphTraversal.ts";
 import { greedyChoices } from "./greedyChoices.ts";
+import { languageRecords } from "./languageRecords.ts";
 import { linkedStructures } from "./linkedStructures.ts";
 import { numberTheory } from "./numberTheory.ts";
 import { optimization } from "./optimization.ts";
@@ -17,6 +20,7 @@ import { patternMatching } from "./patternMatching.ts";
 import { queues } from "./queues.ts";
 import { rangePatterns } from "./rangePatterns.ts";
 import { rangeStructures } from "./rangeStructures.ts";
+import { safeConversion } from "./safeConversion.ts";
 import { searchPatterns } from "./searchPatterns.ts";
 import { sequenceDp } from "./sequenceDp.ts";
 import { structures } from "./structures.ts";
@@ -28,5 +32,6 @@ export const publishedTopics = [
   ...graphAndDp, ...numberTheory, ...queues, ...weightedPaths, ...rangeStructures,
   ...decomposition, ...earlyPractice, ...executionBasics, ...analysisBasics, ...correctnessBasics,
   ...linkedStructures, ...searchPatterns, ...rangePatterns, ...graphTraversal, ...treeAndGrid,
-  ...sequenceDp, ...patternMatching, ...greedyChoices, ...graphColoring,
+  ...sequenceDp, ...patternMatching, ...greedyChoices, ...graphColoring, ...languageRecords,
+  ...arrayAndMap, ...safeConversion, ...dynamicMemory,
 ];

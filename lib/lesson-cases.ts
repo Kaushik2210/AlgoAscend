@@ -709,5 +709,83 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3 0\n",
       "expected": "YES\n"
     }
+  ],
+  "records-and-objects-practice": [
+    {
+      "stdin": "0 0 3\n0 -1 1\n",
+      "expected": "0\n0\n0\n"
+    },
+    {
+      "stdin": "10 1 3\n9 -10 -1\n",
+      "expected": "10\n0\n0\n"
+    },
+    {
+      "stdin": "5 5 0\n",
+      "expected": ""
+    }
+  ],
+  "matrix-indexing-practice": [
+    {
+      "stdin": "1 3\n-1 0 2\n",
+      "expected": "-1\n0\n2\n"
+    },
+    {
+      "stdin": "3 1\n5\n0\n-3\n",
+      "expected": "5 0 -3\n"
+    },
+    {
+      "stdin": "1 1\n7\n",
+      "expected": "7\n"
+    }
+  ],
+  "frequency-maps-practice": [
+    {
+      "stdin": "0 3\n0 -1 5\n",
+      "expected": "0\n0\n0\n"
+    },
+    {
+      "stdin": "6 5\n-1 1020 -1 2041 1020 1020\n-1 1020 2041 -1022 0\n",
+      "expected": "2\n3\n1\n0\n0\n"
+    },
+    {
+      "stdin": "1 0\n4\n",
+      "expected": ""
+    }
+  ],
+  "safe-integer-conversion-practice": [
+    {
+      "stdin": "4\n+\n-\n0\n-0\n",
+      "expected": "INVALID\nINVALID\n0\n0\n"
+    },
+    {
+      "stdin": "4\n9999999999\n0000000007\n1_0\n+999\n",
+      "expected": "INVALID\n7\nINVALID\n999\n"
+    },
+    {
+      "stdin": "3\n-1000\n12.3\n--4\n",
+      "expected": "INVALID\nINVALID\nINVALID\n"
+    },
+    {
+      "stdin": "0\n",
+      "expected": ""
+    }
+  ],
+  "dynamic-storage-practice": [
+    {
+      "stdin": "0 100\n",
+      "expected": "\n"
+    },
+    {
+      "stdin": "1 1000000000\n-8\n",
+      "expected": "-8\n"
+    },
+    {
+      "stdin": "3 6\n-1 0 5\n",
+      "expected": "-1 0 5\n"
+    },
+    {
+      "stdin": "3 2\n7 8 9\n",
+      "expected": "9 7 8\n"
+    }
   ]
 };
