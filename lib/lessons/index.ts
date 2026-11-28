@@ -56,6 +56,8 @@ import { interviewGrid } from "./interviewGrid.ts";
 import { interviewCache } from "./interviewCache.ts";
 import { lazySegments } from "./lazySegments.ts";
 import { palindromes } from "./palindromes.ts";
+import { persistentSegments } from "./persistentSegments.ts";
+import { ahoCorasick } from "./ahoCorasick.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -78,4 +80,5 @@ export const publishedTopics = [
   ...undirectedCycles, ...interviewGrid,
   ...interviewCache,
   ...lazySegments, ...palindromes,
+  ...persistentSegments, ...ahoCorasick,
 ];
