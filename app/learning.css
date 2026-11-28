@@ -146,3 +146,12 @@ pre {margin:12px 0;background:var(--bg);border:1px solid var(--line);border-radi
 @media(max-width:700px) {.detective-grid {grid-template-columns:minmax(0,1fr)}}
 .editorial h3 {font-size:17px;margin:14px 0 4px}
 .editorial ul {margin:8px 0 0;padding-left:22px;color:var(--muted)}
+
+.rehearsal-grid {margin-bottom:16px}
+.rehearsal-clock {font-family:var(--font-geist-mono),monospace;font-size:clamp(2.25rem,8vw,4rem);font-variant-numeric:tabular-nums;line-height:1.2;margin:16px 0}
+.rehearsal-actions {display:flex;flex-wrap:wrap;gap:8px}
+.rehearsal-session [role="status"]:not(:empty) {margin-top:12px}
+.rehearsal-steps {padding-inline-start:22px;margin-block:12px}
+.rehearsal-steps li+li {margin-top:8px}
+.rehearsal-links {list-style:none;padding:0;margin:8px 0 0}
+.rehearsal-question {margin-block:16px}

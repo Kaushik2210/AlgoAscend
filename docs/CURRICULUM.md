@@ -18,7 +18,7 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 | 11 · Advanced data structures | Fenwick trees, segment trees for range minima, sparse tables | Lazy and persistent segment trees, ordered sets, treaps, heavy-light and centroid decomposition, Mo’s algorithm, square-root decomposition and offline queries |
 | 12 · Advanced string algorithms | KMP string matching, Z algorithm, rolling hashes and Rabin–Karp | Manacher, Aho–Corasick, suffix arrays, LCP arrays and suffix automata |
 | 13 · Advanced competitive programming | XOR and bitmasks | Interactive problems, geometry, convex hull, sweep line, FFT and NTT, advanced graphs, constructive and randomized methods, optimization, contest strategy, stress testing and upsolving |
-| 14 · Interview and placement preparation | Interview two pointers, 30-minute coding mocks for distinct substrings, prefix maps, and fast and slow pointers | More interview patterns, integrated mock timing, company-style practice and behavioral preparation |
+| 14 · Interview and placement preparation | Interview two pointers, 30-minute coding mocks for distinct substrings, prefix maps, and fast and slow pointers, a rehearsal timer and behavioral STAR prompts | More interview patterns and company-style practice |
 
 ## References
 

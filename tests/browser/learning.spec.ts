@@ -215,3 +215,40 @@ test("a learner steps through a worked example and opens its matching challenge"
   await page.getByRole("link",{name:"Practice this concept"}).click();
   await expect(page.getByRole("heading",{name:"Decode a binary word"})).toBeVisible();
 });
+
+test("interview rehearsal starts a timer and keeps separate behavioral drafts", async ({page}) => {
+  await page.setViewportSize({width: 390, height: 844});
+  await page.clock.install({time: new Date("2026-01-01T09:00:00Z")});
+  await page.goto("/learn");
+  await page.getByRole("link", {name: "Interview rehearsal"}).click();
+  await expect(page.getByRole("heading", {name: "Rehearse your interview."})).toBeVisible();
+  const challenge = page.getByRole("link", {name: "Coding mock: longest unique substring"});
+  await expect(challenge).toHaveAttribute("href", "/practice/interview-unique-window-practice");
+  await expect(challenge).toHaveAttribute("target", "_blank");
+  const timer = page.getByRole("timer", {name: "Time remaining"});
+  await expect(timer).toHaveText("30:00");
+  await page.getByRole("button", {name: "Start timer"}).click();
+  await page.clock.fastForward(2000);
+  await expect(timer).toHaveText("29:58");
+  await page.getByRole("button", {name: "Pause timer"}).click();
+  await page.clock.fastForward(3000);
+  await expect(timer).toHaveText("29:58");
+  await page.getByRole("button", {name: "Reset timer"}).click();
+  await page.getByLabel("Rehearsal format").selectOption("behavioral");
+  await expect(timer).toHaveText("02:00");
+  const draft = page.getByRole("textbox", {name: "Your practice notes"});
+  await draft.fill("I documented the failed release and coordinated the rollback.");
+  await page.getByLabel("Behavioral prompt").selectOption("feedback");
+  await expect(draft).toHaveValue("");
+  await page.getByLabel("Behavioral prompt").selectOption("setback");
+  await expect(draft).toHaveValue("I documented the failed release and coordinated the rollback.");
+  await page.getByRole("button", {name: "Start timer"}).click();
+  await page.clock.fastForward(120_010);
+  await expect(timer).toHaveText("00:00");
+  await expect(page.getByRole("status")).toHaveText("Time is up. Review your response.");
+  for (const theme of ["light", "dark"] as const) {
+    await page.emulateMedia({colorScheme: theme, reducedMotion: "reduce"});
+    expect((await new AxeBuilder({page}).withTags(["wcag2a","wcag2aa","wcag21aa","wcag22aa"]).analyze()).violations).toEqual([]);
+  }
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});
