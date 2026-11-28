@@ -1671,5 +1671,41 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1\n1000000000 3\n",
       "expected": "1\n"
     }
+  ],
+  "tree-dp-practice": [
+    {
+      "stdin": "1\n-3\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "4\n9 -1 -1 9\n0 1 2\n",
+      "expected": "18\n"
+    },
+    {
+      "stdin": "4\n6 3 3 3\n0 0 0\n",
+      "expected": "9\n"
+    },
+    {
+      "stdin": "3\n-1 -1 -1\n0 1\n",
+      "expected": "0\n"
+    }
+  ],
+  "probability-dp-practice": [
+    {
+      "stdin": "0 0\n",
+      "expected": "1/1\n"
+    },
+    {
+      "stdin": "2 2\n6 0\n",
+      "expected": "0/1\n"
+    },
+    {
+      "stdin": "2 1\n6 0\n",
+      "expected": "1/1\n"
+    },
+    {
+      "stdin": "20 20\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n",
+      "expected": "1/3656158440062976\n"
+    }
   ]
 };

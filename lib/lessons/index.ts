@@ -74,6 +74,8 @@ import { digitStates } from "./digitStates.ts";
 import { commonMultiples } from "./commonMultiples.ts";
 import { maskAssignments } from "./maskAssignments.ts";
 import { modularInverses } from "./modularInverses.ts";
+import { treeIndependentSets } from "./treeIndependentSets.ts";
+import { probabilityStates } from "./probabilityStates.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -105,4 +107,5 @@ export const publishedTopics = [
   ...eulerTours, ...rerootingTrees,
   ...digitStates, ...commonMultiples,
   ...maskAssignments, ...modularInverses,
+  ...treeIndependentSets, ...probabilityStates,
 ];
