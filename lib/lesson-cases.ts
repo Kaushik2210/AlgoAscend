@@ -903,5 +903,59 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3\n1 1\n1 4\n1 2\n",
       "expected": "1 4\n"
     }
+  ],
+  "monotonic-stacks-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "\n"
+    },
+    {
+      "stdin": "3\n2 2 2\n",
+      "expected": "-1 -1 -1\n"
+    },
+    {
+      "stdin": "4\n-4 -1 -3 0\n",
+      "expected": "1 3 3 -1\n"
+    },
+    {
+      "stdin": "4\n9 8 7 6\n",
+      "expected": "-1 -1 -1 -1\n"
+    }
+  ],
+  "monotonic-deques-practice": [
+    {
+      "stdin": "4 1\n-4 -1 3 3\n",
+      "expected": "-4 -1 3 3\n"
+    },
+    {
+      "stdin": "5 3\n9 7 5 3 1\n",
+      "expected": "9 7 5\n"
+    },
+    {
+      "stdin": "5 3\n2 2 2 1 0\n",
+      "expected": "2 2 2\n"
+    },
+    {
+      "stdin": "4 4\n0 -3 1 -2\n",
+      "expected": "1\n"
+    }
+  ],
+  "coordinate-compression-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "\n"
+    },
+    {
+      "stdin": "3\n6 6 6\n",
+      "expected": "0 0 0\n"
+    },
+    {
+      "stdin": "5\n-1000000000 1000000000 0 -1000000000 -1\n",
+      "expected": "0 3 2 0 1\n"
+    },
+    {
+      "stdin": "4\n4 3 2 1\n",
+      "expected": "3 2 1 0\n"
+    }
   ]
 };

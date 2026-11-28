@@ -30,6 +30,9 @@ import { permutationBacktracking } from "./permutationBacktracking.ts";
 import { combinatorics } from "./combinatorics.ts";
 import { priorityQueues } from "./priorityQueues.ts";
 import { mergeIntervals } from "./mergeIntervals.ts";
+import { monotonicStack } from "./monotonicStack.ts";
+import { monotonicDeque } from "./monotonicDeque.ts";
+import { coordinateCompression } from "./coordinateCompression.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -40,4 +43,5 @@ export const publishedTopics = [
   ...arrayAndMap, ...safeConversion, ...dynamicMemory,
   ...permutationBacktracking, ...combinatorics,
   ...priorityQueues, ...mergeIntervals,
+  ...monotonicStack, ...monotonicDeque, ...coordinateCompression,
 ];
