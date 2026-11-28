@@ -1287,5 +1287,59 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3 3 5\n0 0\n0 1\n1 1\n1 2\n2 0\n",
       "expected": "3\n"
     }
+  ],
+  "graph-representations-practice": [
+    {
+      "stdin": "1 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "2 3\n0 1\n1 0\n1 1\n",
+      "expected": "0 1\n1 1\n"
+    },
+    {
+      "stdin": "3 1\n1 2\n",
+      "expected": "0 0 0\n0 0 1\n0 1 0\n"
+    }
+  ],
+  "undirected-cycle-detection-practice": [
+    {
+      "stdin": "1 0\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "1 1\n0 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "4 2\n1 2\n2 1\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "5 3\n0 1\n2 3\n3 4\n",
+      "expected": "-1\n"
+    }
+  ],
+  "interview-grid-bfs-practice": [
+    {
+      "stdin": "1 1\n#\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "1 1\n.\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "1 3\nS#.\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "1 6\nS....S\n",
+      "expected": "2\n"
+    },
+    {
+      "stdin": "2 3\nS#.\n...\n",
+      "expected": "4\n"
+    }
   ]
 };

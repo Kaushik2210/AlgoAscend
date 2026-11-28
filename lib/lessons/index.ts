@@ -50,9 +50,12 @@ import { primTree } from "./primTree.ts";
 import { eulerTrails } from "./eulerTrails.ts";
 import { networkFlow } from "./networkFlow.ts";
 import { bipartiteMatching } from "./bipartiteMatching.ts";
+import { graphRepresentations } from "./graphRepresentations.ts";
+import { undirectedCycles } from "./undirectedCycles.ts";
+import { interviewGrid } from "./interviewGrid.ts";
 
 export const publishedTopics = [
-  ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
+  ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
   ...graphAndDp, ...numberTheory, ...queues, ...weightedPaths, ...rangeStructures,
   ...decomposition, ...earlyPractice, ...executionBasics, ...analysisBasics, ...correctnessBasics,
   ...linkedStructures, ...searchPatterns, ...rangePatterns, ...graphTraversal, ...treeAndGrid,
@@ -69,4 +72,5 @@ export const publishedTopics = [
   ...zeroOnePaths, ...spanningTrees,
   ...strongComponents, ...lowLinkConnectivity,
   ...primTree, ...eulerTrails, ...networkFlow, ...bipartiteMatching,
+  ...undirectedCycles, ...interviewGrid,
 ];
