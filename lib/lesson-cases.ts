@@ -957,5 +957,45 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "4\n4 3 2 1\n",
       "expected": "3 2 1 0\n"
     }
+  ],
+  "sparse-tables-practice": [
+    {
+      "stdin": "1 2\n-7\n0 0\n0 0\n",
+      "expected": "-7\n-7\n"
+    },
+    {
+      "stdin": "6 4\n6 -2 7 7 -9 20\n0 3\n1 5\n3 4\n5 5\n",
+      "expected": "-2\n-9\n-9\n20\n"
+    },
+    {
+      "stdin": "2 0\n7 8\n",
+      "expected": ""
+    }
+  ],
+  "rabin-karp-practice": [
+    {
+      "stdin": "a abc\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "aaaaa aaa\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "abc a\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "zzzzzzzzabacaba abacaba\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "abcdefgh xyz\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "bridkylv ihsdzzlg\n",
+      "expected": "0\n"
+    }
   ]
 };

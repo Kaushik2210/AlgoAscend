@@ -33,6 +33,8 @@ import { mergeIntervals } from "./mergeIntervals.ts";
 import { monotonicStack } from "./monotonicStack.ts";
 import { monotonicDeque } from "./monotonicDeque.ts";
 import { coordinateCompression } from "./coordinateCompression.ts";
+import { sparseTables } from "./sparseTables.ts";
+import { rollingHashes } from "./rollingHashes.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -44,4 +46,5 @@ export const publishedTopics = [
   ...permutationBacktracking, ...combinatorics,
   ...priorityQueues, ...mergeIntervals,
   ...monotonicStack, ...monotonicDeque, ...coordinateCompression,
+  ...sparseTables, ...rollingHashes,
 ];

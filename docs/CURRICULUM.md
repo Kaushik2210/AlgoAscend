@@ -15,8 +15,8 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 | 08 · Greedy algorithms | Interval scheduling and fractional knapsack, including exchange arguments | Huffman coding, job sequencing, additional greedy proofs and counterexamples |
 | 09 · Dynamic programming | Coin-change DP, longest common subsequence, grid path DP, 0/1 knapsack with space optimization, edit distance | Memoization, Fibonacci, more knapsack variants, LIS, interval, tree, digit, bitmask, probability and graph DP, plus advanced optimizations |
 | 10 · Competitive programming mathematics | Euclidean algorithm, modular exponentiation, sieve of Eratosthenes, combinations, prime factorization | LCM, modular inverses and theorems, more combinatorial counting, inclusion-exclusion, pigeonhole principle, probability, matrix powers and impartial games |
-| 11 · Advanced data structures | Fenwick trees, segment trees for range minima | Lazy and persistent segment trees, sparse tables, ordered sets, treaps, heavy-light and centroid decomposition, Mo’s algorithm, square-root decomposition and offline queries |
-| 12 · Advanced string algorithms | KMP string matching, Z algorithm | Rolling hash, Rabin–Karp, Manacher, Aho–Corasick, suffix arrays, LCP arrays and suffix automata |
+| 11 · Advanced data structures | Fenwick trees, segment trees for range minima, sparse tables | Lazy and persistent segment trees, ordered sets, treaps, heavy-light and centroid decomposition, Mo’s algorithm, square-root decomposition and offline queries |
+| 12 · Advanced string algorithms | KMP string matching, Z algorithm, rolling hashes and Rabin–Karp | Manacher, Aho–Corasick, suffix arrays, LCP arrays and suffix automata |
 | 13 · Advanced competitive programming | XOR and bitmasks | Interactive problems, geometry, convex hull, sweep line, FFT and NTT, advanced graphs, constructive and randomized methods, optimization, contest strategy, stress testing and upsolving |
 | 14 · Interview and placement preparation | Interview two pointers | More interview patterns and communication drills, timed mocks, company-style practice and behavioral preparation |
 
@@ -30,3 +30,4 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 - [Python glossary on bytecode and virtual machines](https://docs.python.org/3/glossary.html#term-bytecode)
 - [Oracle guide to HotSpot compilation](https://docs.oracle.com/javase/9/jrockit-hotspot/compilation-optimization.htm)
 - [Z algorithm notes by Dan Gusfield](https://www.cs.ucdavis.edu/~gusfield/cs224f11/znotes.pdf)
+- [Karp and Rabin, Efficient Randomized Pattern-Matching Algorithms](https://cris.huji.ac.il/en/publications/efficient-randomized-pattern-matching-algorithms/)
