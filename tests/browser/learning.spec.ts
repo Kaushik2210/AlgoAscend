@@ -234,6 +234,10 @@ test("interview rehearsal starts a timer and keeps separate behavioral drafts", 
   await page.clock.fastForward(3000);
   await expect(timer).toHaveText("29:58");
   await page.getByRole("button", {name: "Reset timer"}).click();
+  await page.getByLabel("Rehearsal format").selectOption("technical");
+  await expect(timer).toHaveText("45:00");
+  await expect(page.getByRole("heading", {name: "Technical round"})).toBeVisible();
+  await expect(page.getByRole("link", {name: "Coding mock: LRU cache"})).toHaveAttribute("href", "/practice/interview-lru-cache-practice");
   await page.getByLabel("Rehearsal format").selectOption("behavioral");
   await expect(timer).toHaveText("02:00");
   const draft = page.getByRole("textbox", {name: "Your practice notes"});

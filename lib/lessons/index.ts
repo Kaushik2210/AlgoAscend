@@ -53,6 +53,7 @@ import { bipartiteMatching } from "./bipartiteMatching.ts";
 import { graphRepresentations } from "./graphRepresentations.ts";
 import { undirectedCycles } from "./undirectedCycles.ts";
 import { interviewGrid } from "./interviewGrid.ts";
+import { interviewCache } from "./interviewCache.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -73,4 +74,5 @@ export const publishedTopics = [
   ...strongComponents, ...lowLinkConnectivity,
   ...primTree, ...eulerTrails, ...networkFlow, ...bipartiteMatching,
   ...undirectedCycles, ...interviewGrid,
+  ...interviewCache,
 ];

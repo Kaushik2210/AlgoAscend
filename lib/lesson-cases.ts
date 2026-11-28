@@ -1341,5 +1341,19 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "2 3\nS#.\n...\n",
       "expected": "4\n"
     }
+  ],
+  "interview-lru-cache-practice": [
+    {
+      "stdin": "1 6\nGET 0\nPUT 0 -1\nPUT 0 4\nGET 0\nPUT 255 9\nGET 0\n",
+      "expected": "MISS\n4\nMISS\n"
+    },
+    {
+      "stdin": "2 6\nPUT 1 4\nPUT 2 5\nPUT 1 6\nPUT 3 7\nGET 2\nGET 1\n",
+      "expected": "MISS\n6\n"
+    },
+    {
+      "stdin": "3 0\n",
+      "expected": ""
+    }
   ]
 };

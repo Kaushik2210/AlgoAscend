@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const formats = { coding: 1800, behavioral: 120 } as const;
+const formats = { coding: 1800, technical: 2700, behavioral: 120 } as const;
 type Format = keyof typeof formats;
 
 const prompts = {
@@ -63,6 +63,7 @@ export function InterviewRehearsal({mocks}: {mocks: {id: string; title: string; 
           reset(nextFormat);
         }}>
           <option value="coding">Coding mock · 30 minutes</option>
+          <option value="technical">Technical round · 45 minutes</option>
           <option value="behavioral">Behavioral answer · 2 minutes</option>
         </select>
       </label>
@@ -73,14 +74,19 @@ export function InterviewRehearsal({mocks}: {mocks: {id: string; title: string; 
       </div>
       <div role="status">{seconds === 0 ? "Time is up. Review your response." : ""}</div>
     </section>
-    {format === "coding" ? <section className="surface" aria-labelledby="coding-rehearsal-title">
-      <h2 id="coding-rehearsal-title">Coding mock</h2>
-      <ol className="rehearsal-steps">
+    {format !== "behavioral" ? <section className="surface" aria-labelledby="coding-rehearsal-title">
+      <h2 id="coding-rehearsal-title">{format === "technical" ? "Technical round" : "Coding mock"}</h2>
+      {format === "technical" ? <ol className="rehearsal-steps">
+        <li><strong>5 minutes.</strong> Clarify constraints and confirm expected behavior with an example.</li>
+        <li><strong>10 minutes.</strong> Explain a baseline, compare approaches, and choose one.</li>
+        <li><strong>20 minutes.</strong> Implement and explain the invariant as you go.</li>
+        <li><strong>10 minutes.</strong> Run edge cases, defend your complexity estimate, and explain what changes at a larger scale.</li>
+      </ol> : <ol className="rehearsal-steps">
         <li><strong>4 minutes.</strong> Clarify the contract and work an example.</li>
         <li><strong>6 minutes.</strong> Explain a baseline and choose an approach.</li>
         <li><strong>12 minutes.</strong> Implement while explaining key decisions.</li>
         <li><strong>8 minutes.</strong> Run edge cases and state complexity.</li>
-      </ol>
+      </ol>}
       <p>Challenges open in a new tab so your timer keeps running.</p>
       <ul className="rehearsal-links">{mocks.map(mock => <li key={mock.id}>
         <Link className="text-link" href={`/practice/${mock.problem}`} target="_blank" rel="noopener noreferrer">{mock.title}</Link>
