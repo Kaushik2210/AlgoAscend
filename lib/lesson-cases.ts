@@ -1707,5 +1707,55 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "20 20\n1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\n",
       "expected": "1/3656158440062976\n"
     }
+  ],
+  "dag-dp-practice": [
+    {
+      "stdin": "1 0 0 0\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "3 1 2 0\n0 1\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 5 0 2\n0 1\n0 1\n1 2\n1 2\n0 2\n",
+      "expected": "5\n"
+    },
+    {
+      "stdin": "33 64 0 32\n0 1\n0 1\n1 2\n1 2\n2 3\n2 3\n3 4\n3 4\n4 5\n4 5\n5 6\n5 6\n6 7\n6 7\n7 8\n7 8\n8 9\n8 9\n9 10\n9 10\n10 11\n10 11\n11 12\n11 12\n12 13\n12 13\n13 14\n13 14\n14 15\n14 15\n15 16\n15 16\n16 17\n16 17\n17 18\n17 18\n18 19\n18 19\n19 20\n19 20\n20 21\n20 21\n21 22\n21 22\n22 23\n22 23\n23 24\n23 24\n24 25\n24 25\n25 26\n25 26\n26 27\n26 27\n27 28\n27 28\n28 29\n28 29\n29 30\n29 30\n30 31\n30 31\n31 32\n31 32\n",
+      "expected": "294967268\n"
+    }
+  ],
+  "interval-dp-practice": [
+    {
+      "stdin": "1\n9 8\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "2\n100 100 100\n",
+      "expected": "1000000\n"
+    },
+    {
+      "stdin": "4\n2 2 2 2 2\n",
+      "expected": "24\n"
+    },
+    {
+      "stdin": "6\n30 35 15 5 10 20 25\n",
+      "expected": "15125\n"
+    }
+  ],
+  "chinese-remainder-theorem-practice": [
+    {
+      "stdin": "3\n0 1 3 7\n3 7 0 1\n0 1 0 1\n",
+      "expected": "3\n3\n0\n"
+    },
+    {
+      "stdin": "3\n5 6 1 4\n5 6 2 3\n5 6 0 3\n",
+      "expected": "5\n5\nNONE\n"
+    },
+    {
+      "stdin": "1\n999998 999999 999999 1000000\n",
+      "expected": "999998999999\n"
+    }
   ]
 };

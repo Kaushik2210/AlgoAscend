@@ -76,6 +76,9 @@ import { maskAssignments } from "./maskAssignments.ts";
 import { modularInverses } from "./modularInverses.ts";
 import { treeIndependentSets } from "./treeIndependentSets.ts";
 import { probabilityStates } from "./probabilityStates.ts";
+import { dagStrategies } from "./dagStrategies.ts";
+import { intervalSplits } from "./intervalSplits.ts";
+import { modularCongruences } from "./modularCongruences.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -108,4 +111,5 @@ export const publishedTopics = [
   ...digitStates, ...commonMultiples,
   ...maskAssignments, ...modularInverses,
   ...treeIndependentSets, ...probabilityStates,
+  ...dagStrategies, ...intervalSplits, ...modularCongruences,
 ];
