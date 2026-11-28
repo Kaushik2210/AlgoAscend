@@ -1155,5 +1155,41 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "4\n1 2 3 0\n",
       "expected": "0\n"
     }
+  ],
+  "zero-one-bfs-practice": [
+    {
+      "stdin": "1 0 0 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 1 0 2\n0 1 0\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4 5 0 3\n0 1 1\n1 2 0\n2 1 0\n2 3 1\n0 2 0\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "2 2 0 1\n0 1 1\n0 1 0\n",
+      "expected": "0\n"
+    }
+  ],
+  "kruskal-spanning-tree-practice": [
+    {
+      "stdin": "1 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 1\n0 1 -2\n",
+      "expected": "DISCONNECTED\n"
+    },
+    {
+      "stdin": "3 5\n0 0 -10\n0 1 7\n0 1 -2\n1 2 1\n0 2 10\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4 4\n0 1 5\n1 2 5\n2 3 5\n3 0 5\n",
+      "expected": "15\n"
+    }
   ]
 };

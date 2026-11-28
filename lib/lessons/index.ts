@@ -42,6 +42,8 @@ import { treeDiameter } from "./treeDiameter.ts";
 import { negativePaths } from "./negativePaths.ts";
 import { interviewWindows } from "./interviewWindows.ts";
 import { interviewLinked } from "./interviewLinked.ts";
+import { zeroOnePaths } from "./zeroOnePaths.ts";
+import { spanningTrees } from "./spanningTrees.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -58,4 +60,5 @@ export const publishedTopics = [
   ...ancestorQueries, ...treeDiameter,
   ...negativePaths,
   ...interviewWindows, ...interviewLinked,
+  ...zeroOnePaths, ...spanningTrees,
 ];
