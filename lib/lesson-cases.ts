@@ -1191,5 +1191,41 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "4 4\n0 1 5\n1 2 5\n2 3 5\n3 0 5\n",
       "expected": "15\n"
     }
+  ],
+  "strongly-connected-components-practice": [
+    {
+      "stdin": "4 3\n0 1\n1 2\n2 3\n",
+      "expected": "4\n"
+    },
+    {
+      "stdin": "3 3\n0 1\n1 2\n2 0\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "5 4\n1 2\n2 1\n3 3\n1 2\n",
+      "expected": "4\n"
+    },
+    {
+      "stdin": "1 0\n",
+      "expected": "1\n"
+    }
+  ],
+  "bridges-articulation-points-practice": [
+    {
+      "stdin": "2 2\n0 1\n0 1\n",
+      "expected": "0 0\n"
+    },
+    {
+      "stdin": "5 3\n0 1\n0 2\n0 3\n",
+      "expected": "3 1\n"
+    },
+    {
+      "stdin": "6 4\n0 1\n1 2\n3 4\n4 4\n",
+      "expected": "3 1\n"
+    },
+    {
+      "stdin": "1 0\n",
+      "expected": "0 0\n"
+    }
   ]
 };

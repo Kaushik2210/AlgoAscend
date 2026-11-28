@@ -44,6 +44,8 @@ import { interviewWindows } from "./interviewWindows.ts";
 import { interviewLinked } from "./interviewLinked.ts";
 import { zeroOnePaths } from "./zeroOnePaths.ts";
 import { spanningTrees } from "./spanningTrees.ts";
+import { strongComponents } from "./strongComponents.ts";
+import { lowLinkConnectivity } from "./lowLinkConnectivity.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -61,4 +63,5 @@ export const publishedTopics = [
   ...negativePaths,
   ...interviewWindows, ...interviewLinked,
   ...zeroOnePaths, ...spanningTrees,
+  ...strongComponents, ...lowLinkConnectivity,
 ];
