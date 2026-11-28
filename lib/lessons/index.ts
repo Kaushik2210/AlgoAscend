@@ -28,6 +28,8 @@ import { treeAndGrid } from "./treeAndGrid.ts";
 import { weightedPaths } from "./weightedPaths.ts";
 import { permutationBacktracking } from "./permutationBacktracking.ts";
 import { combinatorics } from "./combinatorics.ts";
+import { priorityQueues } from "./priorityQueues.ts";
+import { mergeIntervals } from "./mergeIntervals.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -37,4 +39,5 @@ export const publishedTopics = [
   ...sequenceDp, ...patternMatching, ...greedyChoices, ...graphColoring, ...languageRecords,
   ...arrayAndMap, ...safeConversion, ...dynamicMemory,
   ...permutationBacktracking, ...combinatorics,
+  ...priorityQueues, ...mergeIntervals,
 ];

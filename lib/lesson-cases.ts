@@ -871,5 +871,37 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1000000000\n",
       "expected": "2 2 2 2 2 2 2 2 2 5 5 5 5 5 5 5 5 5\n"
     }
+  ],
+  "binary-heaps-practice": [
+    {
+      "stdin": "0\n",
+      "expected": ""
+    },
+    {
+      "stdin": "8\n2\n1 -2\n1 5\n1 -2\n2\n2\n2\n2\n",
+      "expected": "EMPTY\n-2\n-2\n5\nEMPTY\n"
+    },
+    {
+      "stdin": "9\n1 4\n1 1\n1 3\n1 2\n2\n1 0\n2\n2\n2\n",
+      "expected": "1\n0\n2\n3\n"
+    }
+  ],
+  "merge-intervals-practice": [
+    {
+      "stdin": "0\n",
+      "expected": ""
+    },
+    {
+      "stdin": "3\n0 10\n2 3\n10 12\n",
+      "expected": "0 12\n"
+    },
+    {
+      "stdin": "3\n0 2\n3 4\n-4 -4\n",
+      "expected": "-4 -4\n0 2\n3 4\n"
+    },
+    {
+      "stdin": "3\n1 1\n1 4\n1 2\n",
+      "expected": "1 4\n"
+    }
   ]
 };
