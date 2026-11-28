@@ -1523,5 +1523,33 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "7\nI 2\nI 1\nI 3\nD 2\nK 1\nK 2\nR 3\n",
       "expected": "1\n3\n1\n"
     }
+  ],
+  "heavy-light-decomposition-practice": [
+    {
+      "stdin": "1 3\n-4\n2 0 0\n1 0 7\n2 0 0\n",
+      "expected": "-4\n7\n"
+    },
+    {
+      "stdin": "4 3\n1 2 3 4\n0 1 2\n2 3 0\n1 2 -5\n2 1 3\n",
+      "expected": "10\n1\n"
+    },
+    {
+      "stdin": "7 3\n1 2 4 8 16 32 64\n0 0 1 1 2 2\n2 4 6\n2 3 4\n2 5 2\n",
+      "expected": "87\n26\n36\n"
+    }
+  ],
+  "centroid-decomposition-practice": [
+    {
+      "stdin": "1 4\n2 0\n1 0\n1 0\n2 0\n",
+      "expected": "-1\n0\n"
+    },
+    {
+      "stdin": "6 5\n0 0 0 0 0\n1 1\n2 5\n2 0\n1 5\n2 5\n",
+      "expected": "2\n1\n0\n"
+    },
+    {
+      "stdin": "7 5\n0 0 1 1 2 2\n1 6\n2 3\n1 4\n2 3\n2 6\n",
+      "expected": "4\n2\n0\n"
+    }
   ]
 };

@@ -64,6 +64,8 @@ import { suffixAutomata } from "./suffixAutomata.ts";
 import { squareRootBlocks } from "./squareRootBlocks.ts";
 import { offlineQueries } from "./offlineQueries.ts";
 import { orderedTreaps } from "./orderedTreaps.ts";
+import { heavyLightPaths } from "./heavyLightPaths.ts";
+import { centroidQueries } from "./centroidQueries.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -90,4 +92,5 @@ export const publishedTopics = [
   ...suffixArrays, ...longestCommonPrefixes,
   ...suffixAutomata, ...squareRootBlocks,
   ...offlineQueries, ...orderedTreaps,
+  ...heavyLightPaths, ...centroidQueries,
 ];
