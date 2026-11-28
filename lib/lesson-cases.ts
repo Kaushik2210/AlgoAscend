@@ -1611,5 +1611,37 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "2\n0\n",
       "expected": "1 1\n"
     }
+  ],
+  "digit-dp-practice": [
+    {
+      "stdin": "0 1\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "1000000000000 1\n",
+      "expected": "1000000000001\n"
+    },
+    {
+      "stdin": "99 20\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "10 2\n",
+      "expected": "5\n"
+    }
+  ],
+  "gcd-and-lcm-practice": [
+    {
+      "stdin": "2\n0 0\n1 0\n",
+      "expected": "0\n0\n"
+    },
+    {
+      "stdin": "2\n1000000000 999999999\n1000000000 1000000000\n",
+      "expected": "999999999000000000\n1000000000\n"
+    },
+    {
+      "stdin": "2\n4 16\n16 4\n",
+      "expected": "16\n16\n"
+    }
   ]
 };

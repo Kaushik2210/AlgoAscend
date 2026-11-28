@@ -70,6 +70,8 @@ import { offlineConnectivity } from "./offlineConnectivity.ts";
 import { prefixTries } from "./prefixTries.ts";
 import { eulerTours } from "./eulerTours.ts";
 import { rerootingTrees } from "./rerootingTrees.ts";
+import { digitStates } from "./digitStates.ts";
+import { commonMultiples } from "./commonMultiples.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -99,4 +101,5 @@ export const publishedTopics = [
   ...heavyLightPaths, ...centroidQueries,
   ...offlineConnectivity, ...prefixTries,
   ...eulerTours, ...rerootingTrees,
+  ...digitStates, ...commonMultiples,
 ];
