@@ -39,6 +39,7 @@ import { increasingSubsequence } from "./increasingSubsequence.ts";
 import { memoization } from "./memoization.ts";
 import { ancestorQueries } from "./ancestorQueries.ts";
 import { treeDiameter } from "./treeDiameter.ts";
+import { negativePaths } from "./negativePaths.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -53,4 +54,5 @@ export const publishedTopics = [
   ...sparseTables, ...rollingHashes,
   ...increasingSubsequence, ...memoization,
   ...ancestorQueries, ...treeDiameter,
+  ...negativePaths,
 ];

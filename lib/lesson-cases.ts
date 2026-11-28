@@ -1065,5 +1065,37 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "8\n0 1 1 2 3 4 5\n",
       "expected": "6\n"
     }
+  ],
+  "bellman-ford-practice": [
+    {
+      "stdin": "3 2 0\n1 2 -1\n2 1 -1\n",
+      "expected": "0 INF INF\n"
+    },
+    {
+      "stdin": "3 3 0\n0 1 0\n1 2 -1\n2 1 -1\n",
+      "expected": "NEGATIVE CYCLE\n"
+    },
+    {
+      "stdin": "1 1 0\n0 0 -1\n",
+      "expected": "NEGATIVE CYCLE\n"
+    },
+    {
+      "stdin": "2 0 1\n",
+      "expected": "INF 0\n"
+    }
+  ],
+  "floyd-warshall-practice": [
+    {
+      "stdin": "1 0 1\n0 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 3 3\n0 1 9\n0 1 4\n1 2 -9\n0 2\n1 2\n2 1\n",
+      "expected": "-5\n-9\nINF\n"
+    },
+    {
+      "stdin": "4 3 2\n0 3 5\n3 2 5\n2 1 -1\n0 1\n1 0\n",
+      "expected": "9\nINF\n"
+    }
   ]
 };
