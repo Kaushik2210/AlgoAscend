@@ -54,6 +54,8 @@ import { graphRepresentations } from "./graphRepresentations.ts";
 import { undirectedCycles } from "./undirectedCycles.ts";
 import { interviewGrid } from "./interviewGrid.ts";
 import { interviewCache } from "./interviewCache.ts";
+import { lazySegments } from "./lazySegments.ts";
+import { palindromes } from "./palindromes.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -75,4 +77,5 @@ export const publishedTopics = [
   ...primTree, ...eulerTrails, ...networkFlow, ...bipartiteMatching,
   ...undirectedCycles, ...interviewGrid,
   ...interviewCache,
+  ...lazySegments, ...palindromes,
 ];
