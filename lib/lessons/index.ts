@@ -62,6 +62,8 @@ import { suffixArrays } from "./suffixArrays.ts";
 import { longestCommonPrefixes } from "./longestCommonPrefixes.ts";
 import { suffixAutomata } from "./suffixAutomata.ts";
 import { squareRootBlocks } from "./squareRootBlocks.ts";
+import { offlineQueries } from "./offlineQueries.ts";
+import { orderedTreaps } from "./orderedTreaps.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -87,4 +89,5 @@ export const publishedTopics = [
   ...persistentSegments, ...ahoCorasick,
   ...suffixArrays, ...longestCommonPrefixes,
   ...suffixAutomata, ...squareRootBlocks,
+  ...offlineQueries, ...orderedTreaps,
 ];

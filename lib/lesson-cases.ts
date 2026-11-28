@@ -1495,5 +1495,33 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "4 2\n-5 -2 0 9\n2 0 3\n2 2 3\n",
       "expected": "2\n9\n"
     }
+  ],
+  "mos-algorithm-practice": [
+    {
+      "stdin": "1 2\n0\n0 0\n0 0\n",
+      "expected": "1\n1\n"
+    },
+    {
+      "stdin": "5 5\n1 2 1 3 2\n4 4\n1 4\n2 3\n0 0\n0 4\n",
+      "expected": "1\n3\n2\n1\n3\n"
+    },
+    {
+      "stdin": "3 0\n0 1000 0\n",
+      "expected": ""
+    }
+  ],
+  "treap-ordered-set-practice": [
+    {
+      "stdin": "4\nK 1\nD -3\nR 0\nK 0\n",
+      "expected": "NONE\n0\nNONE\n"
+    },
+    {
+      "stdin": "10\nI -5\nI 8\nI 0\nI -3\nK 2\nD 0\nR 8\nI 0\nK 3\nK 4\n",
+      "expected": "-3\n2\n0\n8\n"
+    },
+    {
+      "stdin": "7\nI 2\nI 1\nI 3\nD 2\nK 1\nK 2\nR 3\n",
+      "expected": "1\n3\n1\n"
+    }
   ]
 };
