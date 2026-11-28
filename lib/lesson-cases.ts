@@ -1643,5 +1643,33 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "2\n4 16\n16 4\n",
       "expected": "16\n16\n"
     }
+  ],
+  "bitmask-dp-practice": [
+    {
+      "stdin": "1\n-7\n",
+      "expected": "-7\n"
+    },
+    {
+      "stdin": "3\n1 1 1\n1 1 1\n1 1 1\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "3\n4 -3 5\n0 8 2\n-1 5 1\n",
+      "expected": "-2\n"
+    }
+  ],
+  "modular-inverses-practice": [
+    {
+      "stdin": "3\n0 7\n1 1000000000\n2 7\n",
+      "expected": "NONE\n1\n4\n"
+    },
+    {
+      "stdin": "3\n8 12\n7 9\n999999999 1000000000\n",
+      "expected": "NONE\n4\n999999999\n"
+    },
+    {
+      "stdin": "1\n1000000000 3\n",
+      "expected": "1\n"
+    }
   ]
 };

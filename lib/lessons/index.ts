@@ -72,6 +72,8 @@ import { eulerTours } from "./eulerTours.ts";
 import { rerootingTrees } from "./rerootingTrees.ts";
 import { digitStates } from "./digitStates.ts";
 import { commonMultiples } from "./commonMultiples.ts";
+import { maskAssignments } from "./maskAssignments.ts";
+import { modularInverses } from "./modularInverses.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -102,4 +104,5 @@ export const publishedTopics = [
   ...offlineConnectivity, ...prefixTries,
   ...eulerTours, ...rerootingTrees,
   ...digitStates, ...commonMultiples,
+  ...maskAssignments, ...modularInverses,
 ];
