@@ -1551,5 +1551,33 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "7 5\n0 0 1 1 2 2\n1 6\n2 3\n1 4\n2 3\n2 6\n",
       "expected": "4\n2\n0\n"
     }
+  ],
+  "offline-threshold-queries-practice": [
+    {
+      "stdin": "2 0 2\n0 0 -9\n0 1 9\n",
+      "expected": "YES\nNO\n"
+    },
+    {
+      "stdin": "4 3 4\n0 1 -2\n1 2 -2\n2 3 0\n0 2 -3\n0 3 0\n0 2 -2\n0 3 -2\n",
+      "expected": "NO\nYES\nYES\nNO\n"
+    },
+    {
+      "stdin": "1 0 0\n",
+      "expected": ""
+    }
+  ],
+  "prefix-tries-practice": [
+    {
+      "stdin": "0 2\na\nz\n",
+      "expected": "0\n0\n"
+    },
+    {
+      "stdin": "4 4\na\nab\nalps\na\na\nal\nab\nabc\n",
+      "expected": "4\n1\n1\n0\n"
+    },
+    {
+      "stdin": "1 0\nz\n",
+      "expected": ""
+    }
   ]
 };
