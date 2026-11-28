@@ -787,5 +787,89 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3 2\n7 8 9\n",
       "expected": "9 7 8\n"
     }
+  ],
+  "distinct-permutations-practice": [
+    {
+      "stdin": "a\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "aaa\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "abc\n",
+      "expected": "6\n"
+    },
+    {
+      "stdin": "aabb\n",
+      "expected": "2\n"
+    },
+    {
+      "stdin": "abcdefgh\n",
+      "expected": "40320\n"
+    }
+  ],
+  "n-queens-practice": [
+    {
+      "stdin": "1\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "2\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "8\n",
+      "expected": "92\n"
+    },
+    {
+      "stdin": "9\n",
+      "expected": "352\n"
+    }
+  ],
+  "counting-combinations-practice": [
+    {
+      "stdin": "0 0\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "2 3\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "60 30\n",
+      "expected": "118264581564861424\n"
+    },
+    {
+      "stdin": "8 8\n",
+      "expected": "1\n"
+    }
+  ],
+  "prime-factorization-practice": [
+    {
+      "stdin": "1\n",
+      "expected": "NONE\n"
+    },
+    {
+      "stdin": "999983\n",
+      "expected": "999983\n"
+    },
+    {
+      "stdin": "49\n",
+      "expected": "7 7\n"
+    },
+    {
+      "stdin": "64\n",
+      "expected": "2 2 2 2 2 2\n"
+    },
+    {
+      "stdin": "1000000000\n",
+      "expected": "2 2 2 2 2 2 2 2 2 5 5 5 5 5 5 5 5 5\n"
+    }
   ]
 };

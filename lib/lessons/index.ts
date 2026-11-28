@@ -26,6 +26,8 @@ import { sequenceDp } from "./sequenceDp.ts";
 import { structures } from "./structures.ts";
 import { treeAndGrid } from "./treeAndGrid.ts";
 import { weightedPaths } from "./weightedPaths.ts";
+import { permutationBacktracking } from "./permutationBacktracking.ts";
+import { combinatorics } from "./combinatorics.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -34,4 +36,5 @@ export const publishedTopics = [
   ...linkedStructures, ...searchPatterns, ...rangePatterns, ...graphTraversal, ...treeAndGrid,
   ...sequenceDp, ...patternMatching, ...greedyChoices, ...graphColoring, ...languageRecords,
   ...arrayAndMap, ...safeConversion, ...dynamicMemory,
+  ...permutationBacktracking, ...combinatorics,
 ];
