@@ -8,7 +8,7 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 | 01 · Programming fundamentals | Loops and running totals, conditionals and functions, nested loops, integer types and division, variable scope, records and objects, type conversion and input errors, dynamic storage | Additional types and operators, constants, debugging, pattern printing, and language-specific modules for C, Python and Java |
 | 02 · Algorithmic foundations | Recursion and growth, amortized array growth, asymptotic bounds and operation budgets, loop invariants | Deeper space analysis, recurrence relations and recursive correctness proofs |
 | 03 · Essential data structures | Stacks and brackets, circular queues, singly linked lists, arrays and matrix indexing, binary heaps and priority queues | String fundamentals, doubly linked and circular lists, set operations and alternative hash table strategies |
-| 04 · Essential algorithmic patterns | Binary search, bubble sort, prefix sums, fixed-size sliding windows, variable-size sliding windows, difference arrays, linear search, binary search on the answer, suffix sums, frequency counting and hash maps, merging intervals, monotonic stacks and deques, coordinate compression | General two pointers, additional sorts, fast and slow pointers, and meet in the middle |
+| 04 · Essential algorithmic patterns | Binary search, bubble sort, prefix sums, fixed-size sliding windows, variable-size sliding windows, difference arrays, linear search, binary search on the answer, suffix sums, frequency counting and hash maps, merging intervals, monotonic stacks and deques, coordinate compression | General two pointers, additional sorts and meet in the middle |
 | 05 · Trees and hierarchical structures | Binary tree traversal, binary search trees, binary lifting for lowest common ancestors, tree diameter with tree DP | AVL and red-black trees, B-trees and B+ trees, tries, Euler tours, additional tree DP and rerooting |
 | 06 · Graph algorithms | Breadth-first search, disjoint set union, Dijkstra’s shortest paths, DFS and connected components, topological sorting and directed cycles, bipartite graphs, Bellman–Ford, Floyd–Warshall | More graph representations, undirected cycle detection, 0–1 BFS, spanning trees, strongly connected components, bridges, articulation points, Eulerian paths, flow, cuts and matching |
 | 07 · Recursion and backtracking | Subset backtracking, distinct permutations, N-Queens | Dedicated recursion trees and subsequences, more combination exercises, Sudoku, mazes, constraint satisfaction and branch and bound |
@@ -18,7 +18,7 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 | 11 · Advanced data structures | Fenwick trees, segment trees for range minima, sparse tables | Lazy and persistent segment trees, ordered sets, treaps, heavy-light and centroid decomposition, Mo’s algorithm, square-root decomposition and offline queries |
 | 12 · Advanced string algorithms | KMP string matching, Z algorithm, rolling hashes and Rabin–Karp | Manacher, Aho–Corasick, suffix arrays, LCP arrays and suffix automata |
 | 13 · Advanced competitive programming | XOR and bitmasks | Interactive problems, geometry, convex hull, sweep line, FFT and NTT, advanced graphs, constructive and randomized methods, optimization, contest strategy, stress testing and upsolving |
-| 14 · Interview and placement preparation | Interview two pointers | More interview patterns and communication drills, timed mocks, company-style practice and behavioral preparation |
+| 14 · Interview and placement preparation | Interview two pointers, 30-minute coding mocks for distinct substrings, prefix maps, and fast and slow pointers | More interview patterns, integrated mock timing, company-style practice and behavioral preparation |
 
 ## References
 
@@ -32,3 +32,4 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 - [Z algorithm notes by Dan Gusfield](https://www.cs.ucdavis.edu/~gusfield/cs224f11/znotes.pdf)
 - [Karp and Rabin, Efficient Randomized Pattern-Matching Algorithms](https://cris.huji.ac.il/en/publications/efficient-randomized-pattern-matching-algorithms/)
 - [Tree algorithms and binary lifting course notes from HPI and KIT](https://scale.iti.kit.edu/_media/teaching/2023ws/slides_tree.pdf)
+- [Microsoft technical interview guidance](https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html)

@@ -7,6 +7,7 @@ export type Topic = {
   id: string;
   stage: number;
   title: string;
+  minutes?: number;
   objective: string;
   prerequisites: string;
   analogy: string;
@@ -31,7 +32,7 @@ export function defineTopics(topics: Topic[]) {
   return topics.map(topic => {
     const problemId = `${topic.id}-practice`;
     const lesson: Lesson = {
-      id:topic.id, stage:topic.stage, title:topic.title, minutes:12,
+      id:topic.id, stage:topic.stage, title:topic.title, minutes:topic.minutes ?? 12,
       objective:topic.objective, prerequisites:topic.prerequisites, analogy:topic.analogy,
       explanation:topic.explanation, formal:topic.invariant, pseudocode:topic.pseudocode,
       runtime:topic.time, memory:topic.space, walkthrough:topic.trace.map(([,detail]) => detail).join(" "),

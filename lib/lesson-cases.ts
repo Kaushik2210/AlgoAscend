@@ -1097,5 +1097,63 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "4 3 2\n0 3 5\n3 2 5\n2 1 -1\n0 1\n1 0\n",
       "expected": "9\nINF\n"
     }
+  ],
+  "interview-unique-window-practice": [
+    {
+      "stdin": "\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "aaaa\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "dvdf\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "abcdefghijklmnopqrstuvwxyz\n",
+      "expected": "26\n"
+    }
+  ],
+  "interview-prefix-map-practice": [
+    {
+      "stdin": "0 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "2 0\n0 0\n",
+      "expected": "3\n"
+    },
+    {
+      "stdin": "5 3\n3 1 2 -3 3\n",
+      "expected": "5\n"
+    },
+    {
+      "stdin": "4 -1\n-1 0 -1 1\n",
+      "expected": "5\n"
+    }
+  ],
+  "interview-cycle-entry-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "1\n0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3\n1 2 -1\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4\n1 -1 3 2\n",
+      "expected": "-1\n"
+    },
+    {
+      "stdin": "4\n1 2 3 0\n",
+      "expected": "0\n"
+    }
   ]
 };

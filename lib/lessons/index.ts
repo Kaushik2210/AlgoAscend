@@ -40,6 +40,8 @@ import { memoization } from "./memoization.ts";
 import { ancestorQueries } from "./ancestorQueries.ts";
 import { treeDiameter } from "./treeDiameter.ts";
 import { negativePaths } from "./negativePaths.ts";
+import { interviewWindows } from "./interviewWindows.ts";
+import { interviewLinked } from "./interviewLinked.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -55,4 +57,5 @@ export const publishedTopics = [
   ...increasingSubsequence, ...memoization,
   ...ancestorQueries, ...treeDiameter,
   ...negativePaths,
+  ...interviewWindows, ...interviewLinked,
 ];
