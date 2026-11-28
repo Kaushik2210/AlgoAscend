@@ -997,5 +997,41 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "bridkylv ihsdzzlg\n",
       "expected": "0\n"
     }
+  ],
+  "longest-increasing-subsequence-practice": [
+    {
+      "stdin": "0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "4\n2 2 2 2\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "6\n-4 -2 -3 0 0 1\n",
+      "expected": "4\n"
+    },
+    {
+      "stdin": "5\n5 4 3 2 1\n",
+      "expected": "1\n"
+    }
+  ],
+  "fibonacci-memoization-practice": [
+    {
+      "stdin": "0\n",
+      "expected": ""
+    },
+    {
+      "stdin": "3\n0\n1\n2\n",
+      "expected": "0\n1\n1\n"
+    },
+    {
+      "stdin": "3\n92\n90\n92\n",
+      "expected": "7540113804746346429\n2880067194370816120\n7540113804746346429\n"
+    },
+    {
+      "stdin": "3\n5\n10\n6\n",
+      "expected": "5\n55\n8\n"
+    }
   ]
 };

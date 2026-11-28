@@ -35,6 +35,8 @@ import { monotonicDeque } from "./monotonicDeque.ts";
 import { coordinateCompression } from "./coordinateCompression.ts";
 import { sparseTables } from "./sparseTables.ts";
 import { rollingHashes } from "./rollingHashes.ts";
+import { increasingSubsequence } from "./increasingSubsequence.ts";
+import { memoization } from "./memoization.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -47,4 +49,5 @@ export const publishedTopics = [
   ...priorityQueues, ...mergeIntervals,
   ...monotonicStack, ...monotonicDeque, ...coordinateCompression,
   ...sparseTables, ...rollingHashes,
+  ...increasingSubsequence, ...memoization,
 ];
