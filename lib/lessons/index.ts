@@ -68,6 +68,8 @@ import { heavyLightPaths } from "./heavyLightPaths.ts";
 import { centroidQueries } from "./centroidQueries.ts";
 import { offlineConnectivity } from "./offlineConnectivity.ts";
 import { prefixTries } from "./prefixTries.ts";
+import { eulerTours } from "./eulerTours.ts";
+import { rerootingTrees } from "./rerootingTrees.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -96,4 +98,5 @@ export const publishedTopics = [
   ...offlineQueries, ...orderedTreaps,
   ...heavyLightPaths, ...centroidQueries,
   ...offlineConnectivity, ...prefixTries,
+  ...eulerTours, ...rerootingTrees,
 ];

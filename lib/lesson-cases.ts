@@ -1579,5 +1579,37 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1 0\nz\n",
       "expected": ""
     }
+  ],
+  "euler-tour-flattening-practice": [
+    {
+      "stdin": "1 2\n-5\n0\n0\n",
+      "expected": "-5\n-5\n"
+    },
+    {
+      "stdin": "5 4\n0 2 -3 7 -8\n0 0 1 2\n0\n1\n2\n4\n",
+      "expected": "-2\n9\n-11\n-8\n"
+    },
+    {
+      "stdin": "3 0\n3 2 1\n0 1\n",
+      "expected": ""
+    }
+  ],
+  "rerooting-tree-dp-practice": [
+    {
+      "stdin": "1\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "5\n0 0 0 0\n",
+      "expected": "4 7 7 7 7\n"
+    },
+    {
+      "stdin": "5\n0 0 1 1\n",
+      "expected": "6 5 9 8 8\n"
+    },
+    {
+      "stdin": "2\n0\n",
+      "expected": "1 1\n"
+    }
   ]
 };
