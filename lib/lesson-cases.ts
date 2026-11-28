@@ -1227,5 +1227,65 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1 0\n",
       "expected": "0 0\n"
     }
+  ],
+  "prim-spanning-tree-practice": [
+    {
+      "stdin": "1 1\n0 0 -2\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 1\n1 2 4\n",
+      "expected": "DISCONNECTED\n"
+    },
+    {
+      "stdin": "3 4\n0 1 5\n0 1 -4\n0 2 7\n1 2 2\n",
+      "expected": "-2\n"
+    }
+  ],
+  "eulerian-trails-practice": [
+    {
+      "stdin": "5 0\n",
+      "expected": "YES\n"
+    },
+    {
+      "stdin": "4 3\n0 1\n0 2\n0 3\n",
+      "expected": "NO\n"
+    },
+    {
+      "stdin": "4 2\n0 0\n2 2\n",
+      "expected": "NO\n"
+    },
+    {
+      "stdin": "4 3\n0 1\n0 1\n0 0\n",
+      "expected": "YES\n"
+    }
+  ],
+  "max-flow-min-cut-practice": [
+    {
+      "stdin": "2 0 0 1\n",
+      "expected": "0 0\n"
+    },
+    {
+      "stdin": "2 4 1 0\n1 0 2\n1 0 3\n0 1 9\n1 1 10\n",
+      "expected": "5 5\n"
+    },
+    {
+      "stdin": "6 7 0 5\n0 1 1\n0 2 1\n1 3 1\n1 4 1\n2 3 1\n3 5 1\n4 5 1\n",
+      "expected": "2 2\n"
+    }
+  ],
+  "bipartite-matching-practice": [
+    {
+      "stdin": "0 3 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "3 1 4\n0 0\n0 0\n1 0\n2 0\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "3 3 5\n0 0\n0 1\n1 1\n1 2\n2 0\n",
+      "expected": "3\n"
+    }
   ]
 };
