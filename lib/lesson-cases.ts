@@ -1757,5 +1757,63 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1\n999998 999999 999999 1000000\n",
       "expected": "999998999999\n"
     }
+  ],
+  "knapsack-variants-practice": [
+    {
+      "stdin": "1 6\n2 10 1\n",
+      "expected": "10\n"
+    },
+    {
+      "stdin": "1 6\n2 10 -1\n",
+      "expected": "30\n"
+    },
+    {
+      "stdin": "2 7\n1 3 6\n2 7 2\n",
+      "expected": "23\n"
+    },
+    {
+      "stdin": "2 0\n1 99 -1\n3 3 0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "1 400\n1 100000 1000000\n",
+      "expected": "40000000\n"
+    }
+  ],
+  "inclusion-exclusion-practice": [
+    {
+      "stdin": "0 2\n1 5\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "12 3\n2 2 4\n",
+      "expected": "6\n"
+    },
+    {
+      "stdin": "1000000000000 2\n1 999983\n",
+      "expected": "1000000000000\n"
+    },
+    {
+      "stdin": "10 3\n6 7 10\n",
+      "expected": "3\n"
+    }
+  ],
+  "pigeonhole-principle-practice": [
+    {
+      "stdin": "1\n-27\n",
+      "expected": "0 0\n"
+    },
+    {
+      "stdin": "3\n1 1 1\n",
+      "expected": "0 2\n"
+    },
+    {
+      "stdin": "4\n-3 8 5 7\n",
+      "expected": "1 1\n"
+    },
+    {
+      "stdin": "4\n2 -1 5 1\n",
+      "expected": "1 2\n"
+    }
   ]
 };

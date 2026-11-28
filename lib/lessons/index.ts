@@ -79,6 +79,9 @@ import { probabilityStates } from "./probabilityStates.ts";
 import { dagStrategies } from "./dagStrategies.ts";
 import { intervalSplits } from "./intervalSplits.ts";
 import { modularCongruences } from "./modularCongruences.ts";
+import { knapsackVariants } from "./knapsackVariants.ts";
+import { inclusionExclusion } from "./inclusionExclusion.ts";
+import { pigeonholeRanges } from "./pigeonholeRanges.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -112,4 +115,5 @@ export const publishedTopics = [
   ...maskAssignments, ...modularInverses,
   ...treeIndependentSets, ...probabilityStates,
   ...dagStrategies, ...intervalSplits, ...modularCongruences,
+  ...knapsackVariants, ...inclusionExclusion, ...pigeonholeRanges,
 ];
