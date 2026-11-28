@@ -1459,5 +1459,41 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "abc\n0 1 2\n",
       "expected": "0 0 0\n"
     }
+  ],
+  "suffix-automaton-practice": [
+    {
+      "stdin": "z\n",
+      "expected": "1\n"
+    },
+    {
+      "stdin": "aaaaa\n",
+      "expected": "5\n"
+    },
+    {
+      "stdin": "abbb\n",
+      "expected": "7\n"
+    },
+    {
+      "stdin": "banana\n",
+      "expected": "15\n"
+    },
+    {
+      "stdin": "abcab\n",
+      "expected": "12\n"
+    }
+  ],
+  "sqrt-decomposition-practice": [
+    {
+      "stdin": "1 3\n-9\n2 0 0\n1 0 6\n2 0 0\n",
+      "expected": "-9\n6\n"
+    },
+    {
+      "stdin": "5 4\n1 2 3 4 5\n2 1 4\n2 0 2\n1 4 -6\n2 3 4\n",
+      "expected": "14\n6\n-2\n"
+    },
+    {
+      "stdin": "4 2\n-5 -2 0 9\n2 0 3\n2 2 3\n",
+      "expected": "2\n9\n"
+    }
   ]
 };

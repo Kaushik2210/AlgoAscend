@@ -60,6 +60,8 @@ import { persistentSegments } from "./persistentSegments.ts";
 import { ahoCorasick } from "./ahoCorasick.ts";
 import { suffixArrays } from "./suffixArrays.ts";
 import { longestCommonPrefixes } from "./longestCommonPrefixes.ts";
+import { suffixAutomata } from "./suffixAutomata.ts";
+import { squareRootBlocks } from "./squareRootBlocks.ts";
 
 export const publishedTopics = [
   ...graphRepresentations, ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -84,4 +86,5 @@ export const publishedTopics = [
   ...lazySegments, ...palindromes,
   ...persistentSegments, ...ahoCorasick,
   ...suffixArrays, ...longestCommonPrefixes,
+  ...suffixAutomata, ...squareRootBlocks,
 ];
