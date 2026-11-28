@@ -37,6 +37,8 @@ import { sparseTables } from "./sparseTables.ts";
 import { rollingHashes } from "./rollingHashes.ts";
 import { increasingSubsequence } from "./increasingSubsequence.ts";
 import { memoization } from "./memoization.ts";
+import { ancestorQueries } from "./ancestorQueries.ts";
+import { treeDiameter } from "./treeDiameter.ts";
 
 export const publishedTopics = [
   ...fundamentals, ...structures, ...optimization, ...applications, ...corePatterns,
@@ -50,4 +52,5 @@ export const publishedTopics = [
   ...monotonicStack, ...monotonicDeque, ...coordinateCompression,
   ...sparseTables, ...rollingHashes,
   ...increasingSubsequence, ...memoization,
+  ...ancestorQueries, ...treeDiameter,
 ];

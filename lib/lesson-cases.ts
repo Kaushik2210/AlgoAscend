@@ -1033,5 +1033,37 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "3\n5\n10\n6\n",
       "expected": "5\n55\n8\n"
     }
+  ],
+  "lowest-common-ancestor-practice": [
+    {
+      "stdin": "1 2\n0 0\n0 0\n",
+      "expected": "0\n0\n"
+    },
+    {
+      "stdin": "7 4\n0 0 1 1 2 2\n3 4\n3 6\n5 6\n3 3\n",
+      "expected": "1\n0\n2\n3\n"
+    },
+    {
+      "stdin": "8 3\n0 1 2 3 4 5 6\n7 0\n7 2\n4 7\n",
+      "expected": "0\n2\n4\n"
+    }
+  ],
+  "tree-diameter-practice": [
+    {
+      "stdin": "1\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "5\n0 1 2 3\n",
+      "expected": "4\n"
+    },
+    {
+      "stdin": "4\n0 0 0\n",
+      "expected": "2\n"
+    },
+    {
+      "stdin": "8\n0 1 1 2 3 4 5\n",
+      "expected": "6\n"
+    }
   ]
 };
