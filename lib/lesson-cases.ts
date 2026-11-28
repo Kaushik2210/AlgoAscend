@@ -1423,5 +1423,41 @@ export const lessonCases: Record<string, {stdin: string; expected: string}[]> = 
       "stdin": "1\naba\nababa\n",
       "expected": "2\n"
     }
+  ],
+  "suffix-array-practice": [
+    {
+      "stdin": "x\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "aaaaa\n",
+      "expected": "4 3 2 1 0\n"
+    },
+    {
+      "stdin": "zyx\n",
+      "expected": "2 1 0\n"
+    },
+    {
+      "stdin": "abab\n",
+      "expected": "2 0 3 1\n"
+    }
+  ],
+  "lcp-array-practice": [
+    {
+      "stdin": "x\n0\n",
+      "expected": "0\n"
+    },
+    {
+      "stdin": "aaaaa\n4 3 2 1 0\n",
+      "expected": "0 1 2 3 4\n"
+    },
+    {
+      "stdin": "abab\n2 0 3 1\n",
+      "expected": "0 2 0 1\n"
+    },
+    {
+      "stdin": "abc\n0 1 2\n",
+      "expected": "0 0 0\n"
+    }
   ]
 };

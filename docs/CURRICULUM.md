@@ -16,7 +16,7 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 | 09 · Dynamic programming | Coin-change DP, longest common subsequence, grid path DP, 0/1 knapsack with space optimization, edit distance, memoized Fibonacci, longest increasing subsequence | More knapsack variants, interval, tree, digit, bitmask, probability and graph DP, plus advanced optimizations |
 | 10 · Competitive programming mathematics | Euclidean algorithm, modular exponentiation, sieve of Eratosthenes, combinations, prime factorization | LCM, modular inverses and theorems, more combinatorial counting, inclusion-exclusion, pigeonhole principle, probability, matrix powers and impartial games |
 | 11 · Advanced data structures | Fenwick trees, segment trees for range minima, sparse tables, lazy and persistent segment trees | ordered sets, treaps, heavy-light and centroid decomposition, Mo’s algorithm, square-root decomposition and offline queries |
-| 12 · Advanced string algorithms | KMP string matching, Z algorithm, rolling hashes and Rabin–Karp, Manacher and Aho–Corasick | suffix arrays, LCP arrays and suffix automata |
+| 12 · Advanced string algorithms | KMP string matching, Z algorithm, rolling hashes and Rabin–Karp, Manacher, Aho–Corasick, suffix arrays and LCP arrays | Suffix automata |
 | 13 · Advanced competitive programming | XOR and bitmasks | Interactive problems, geometry, convex hull, sweep line, FFT and NTT, advanced graphs, constructive and randomized methods, optimization, contest strategy, stress testing and upsolving |
 | 14 · Interview and placement preparation | Interview two pointers, Coding communication and complexity drills, 30-minute mocks for distinct substrings, prefix maps, fast and slow pointers, grid BFS, and LRU caches, a 45-minute company-style technical round, and behavioral STAR prompts | Covered |
 
@@ -34,3 +34,5 @@ The [live roadmap](https://algoascend.vercel.app/learn) has published lessons in
 - [Tree algorithms and binary lifting course notes from HPI and KIT](https://scale.iti.kit.edu/_media/teaching/2023ws/slides_tree.pdf)
 - [Microsoft technical interview guidance](https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html)
 - [Aho and Corasick, Efficient String Matching](https://dl.acm.org/doi/10.1145/360825.360855)
+- [Manber and Myers, Suffix Arrays](https://epubs.siam.org/doi/10.1137/0222058)
+- [Kasai et al., Linear-Time Longest-Common-Prefix Computation](https://doi.org/10.1007/3-540-48194-x_17)
